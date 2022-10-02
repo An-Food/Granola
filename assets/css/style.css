@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+body{
+    background-color: #dedee0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.logo{
+    border-radius: 50%;
+    width:40px;
+    height: 40px; display: inline-block;
+}
+.header ul{
+    padding: 0;
+    margin: 0;
+    list-style: none; display: inline-block;
+    transform: translate(0,-14px);
+   
+    
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a{
+    cursor: pointer;
+}
+
+#nav li a {
+    text-decoration: none;
+    padding: 0 15px;
+    display: block;
+}
+
+#nav > li:hover > a:hover {
+    color: #806600;
+}
+
+
+.header{
+    position: absolute;
+    z-index: 1;
+    width:100%;
+}
+.header li{
+    display: inline-block;
+    font-size: 25px;
+    margin-left:20px;
+    font-weight: bold;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.item{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.item img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+
+.item{
+    display: none;
+}
+
+.first_item{
+    display: block;
+}
+
+.active, .hide{
+    display: block;
+}
+.active img{
+    animation: showimg 1s ease-in-out 1 forwards;
+}
+.hide img{
+    animation: hideimg 1s ease-in-out 1 forwards;
+}
+@keyframes showimg{
+    0%{
+        transform: translate(100%,0);
+    }
+    100%{
+        transform: translate(0%,0);
+    }
+}
+@keyframes hideimg{
+    0%{
+        transform: translate(0%,0);
+    }100%{
+        transform: translate(-100%,0);
+    }
+}
+.active .content h2{
+    opacity: 0;
+    animation: showcontent 0.7s ease-in-out 1s 1 forwards;
+}
+.active .content .content1{
+    opacity: 0;
+    animation: showcontent 0.7s ease-in-out 1.2s 1 forwards;
+}
+.active .content .button{
+    opacity: 0;
+    animation: showcontent 0.7s ease-in-out 1.4s 1 forwards;
+}
+.hide .content h2, .content1, .button{
+    animation: hidecontent 1.7s ease-in-out 1 forwards;
+}
+@keyframes showcontent{
+    0%{
+        filter: blur(33px);
+        transform: translate(100%,0);
+    }100%{
+        filter: blur(0px);
+        transform: translate(0%,0);
+        opacity: 1;
+    }
+}
+@keyframes hidecontent{
+    0%{
+        filter: blur(0);
+        transform: translate(0%,0);
+    }100%{
+        transform: translate(-100%,0);
+        filter: blur(33px);
+        opacity: 0;
+    }
+}
+
+.start::before{
+    position: absolute;
+    width:100%;
+    height: 4px;
+    content: '';
+    background-color: #EEA83D;
+    animation:time 3s ease-in-out 1 forwards
+}
+
+@keyframes time{
+    0%{
+        width:0;
+    }90%{
+        width:100%;
+        top:0;
+    }
+    100%{
+        top:-10px;
+    }
+}
