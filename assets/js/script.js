@@ -18,49 +18,36 @@ $(document).ready(function(){
 
         $('.dots-page div').removeClass('active');
         $('#dot_'+active).addClass('active');
-        $('.effect').addClass('start');
-        beginPosition();
+        // beginPosition();
 
-        
-        setTimeout(function (){
-            $('.effect').removeClass('start');
-        }, 3000)
     }
-    setInterval(function () {
-        Load();
+    Load();
+    setInterval(function () {        
         active = active + 1 >= count_group ? 0 : active + 1;
         Load();        
     }, 5000);
     });
-$('.button').hover(function(){
-    if($(".effect").hasClass("start")){
-        return;
-    }
-}
-,function(){
-       beginPosition();
-});
 
-function beginPosition(){
-    $('.birt').css('right','50%');
-    $('.birt').css('bottom','25%');
-    $('.birt').css('transform','rotateY(192deg) rotate(-40deg)');
-}
+// function beginPosition(){
+//     $('.birt').css('right','50%');
+//     $('.birt').css('bottom','25%');
+//     $('.birt').css('transform','rotateY(192deg) rotate(-40deg)');
+// }
 
-$('.item').hover(function(event){
-    var $PosTop = event.pageY;
-    var $PosLeft = event.pageX;
-    var $height = $('.item').height();
-    var $width = $('.item').width();
-    var defaultTop = 25;
-    var defaultLeft = 50;
-    var topNew = $PosTop > ( $height/2) + 30 ? defaultTop - 10 :  defaultTop + 10;
-    var leftNew = $PosLeft > ( $width/ 3) + 30 ? defaultLeft - 10 :   defaultLeft +10;
-    $('.birt').css('right',leftNew +'%');
-    $('.birt').css('bottom', topNew +'%');
-    console.log($PosTop, ( $height/2) + 30);
+// $('.item').hover(function(event){
+//     var $PosTop = event.pageY;
+//     var $PosLeft = event.pageX;
+//     var $height = $('.item').height();
+//     var $width = $('.item').width();
+//     var defaultTop = 25;
+//     var defaultLeft = 50;
+//     var topNew = $PosTop > ( $height/2) + 30 ? defaultTop - 10 :  defaultTop + 10;
+//     var leftNew = $PosLeft > ( $width/ 3) + 30 ? defaultLeft - 10 :   defaultLeft +10;
+//     $('.birt').css('right',leftNew +'%');
+//     $('.birt').css('bottom', topNew +'%');
+//     console.log($PosTop, ( $height/2) + 30);
 
-}, function(){
-    beginPosition();
-});
+// }, function(){
+//     beginPosition();
+// });
 
