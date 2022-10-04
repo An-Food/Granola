@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var count_group = $(".slider .item").length;
     var active = 0;
-    var deg_bg = 0;
     var begin= true;
     function Load(){
 
@@ -15,39 +14,46 @@ $(document).ready(function(){
 
         $('#item_'+active).removeClass('hide');
         $('#item_'+active).addClass('active');
-
-        $('.dots-page div').removeClass('active');
-        $('#dot_'+active).addClass('active');
-        // beginPosition();
-
     }
     Load();
     setInterval(function () {        
         active = active + 1 >= count_group ? 0 : active + 1;
         Load();        
     }, 5000);
-    });
 
-// function beginPosition(){
-//     $('.birt').css('right','50%');
-//     $('.birt').css('bottom','25%');
-//     $('.birt').css('transform','rotateY(192deg) rotate(-40deg)');
-// }
+    // 
+    // 
+    // 
+    var count_group_product = $(".list .item_product").length;
+  var active_product = 0;
+  function Load_product(){
+    var bg =  $('#item_product_'+ active_product).data('bg');
 
-// $('.item').hover(function(event){
-//     var $PosTop = event.pageY;
-//     var $PosLeft = event.pageX;
-//     var $height = $('.item').height();
-//     var $width = $('.item').width();
-//     var defaultTop = 25;
-//     var defaultLeft = 50;
-//     var topNew = $PosTop > ( $height/2) + 30 ? defaultTop - 10 :  defaultTop + 10;
-//     var leftNew = $PosLeft > ( $width/ 3) + 30 ? defaultLeft - 10 :   defaultLeft +10;
-//     $('.birt').css('right',leftNew +'%');
-//     $('.birt').css('bottom', topNew +'%');
-//     console.log($PosTop, ( $height/2) + 30);
+    $('#item_product_'+(active_product - 1 < 0 ? count_group_product - 1 : active_product - 1)).removeClass('item_product_active');
+    $('#item_product_'+(active_product - 1 < 0 ? count_group_product - 1 : active_product - 1)).addClass('item_product_none');
 
-// }, function(){
-//     beginPosition();
-// });
+    $('#item_product_'+active_product).removeClass('item_product_none');
+    $('#item_product_'+active_product).addClass('item_product_active');
+    $('.bg-rotate').css('background', bg);
 
+    $('.dot div').removeClass('active_dot');
+    $('#dot_'+active_product).addClass('active_dot');
+
+    // content
+    $('#content_product_'+active_product).css('opacity',1);
+    $('#content_product_'+active_product).css('left',0);
+    $('#content_product_'+(active_product-1 < 0 ? count_group_product - 1 : active_product - 1 )).css('left','-100%');
+    $('#content_product_'+(active_product-1 < 0 ? count_group_product - 1 : active_product  -1 )).css('opacity','0');
+    $('#content_product_'+(active_product - 2 == -1 ? count_group_product - 1 :active_product - 2 == -2 ? count_group_product - 2 : active_product - 2)).css('left','100%');
+  }
+  
+  Load_product();
+  $('#next').on('click', function(){
+    active_product = active_product + 1 >= count_group_product ? 0 : active_product + 1;
+    Load_product();
+  })
+  $('#prev').on('click', function(){
+    active_product = active_product - 1 < 0 ? count_group_product - 1 : active_product - 1;
+    Load_product();
+  })
+});
