@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('.modal').hide();
     var count_group = $(".slider .item").length;
     var active = 0;
     var begin= true;
@@ -55,5 +56,15 @@ $(document).ready(function(){
   $('#prev').on('click', function(){
     active_product = active_product - 1 < 0 ? count_group_product - 1 : active_product - 1;
     Load_product();
+  })
+
+
+  // modal code
+  $('.btn-buy').on('click', function(){
+    $('.modal').show();
+  })
+
+  $('.btn-back').on('click', function(){
+    $('.modal').hide();
   })
 });

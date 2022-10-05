@@ -106,8 +106,8 @@
                               </p>
                               
                               <p class="list-button">
-                                  <button><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                  <button><i class="fa-solid fa-heart-circle-check"></i></button>
+                                    <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                    <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
                               </p>
                           </div>
                           <div class="item_product" id="content_product_1">
@@ -120,8 +120,8 @@
                               </p>
 
                               <p class="list-button">
-                                  <button><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                  <button><i class="fa-solid fa-heart-circle-check"></i></button>
+                                  <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                  <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
                               </p>
                           </div>
                           <div class="item_product" id="content_product_2">
@@ -134,8 +134,8 @@
                               </p>
 
                               <p class="list-button">
-                                  <button><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                  <button><i class="fa-solid fa-heart-circle-check"></i></button>
+                                  <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                  <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
                               </p>
                           </div>
                       </div>
@@ -162,7 +162,7 @@
                     <p>Bài viết</p>
                 </div>
                 <div class="post">
-                    <a class="imagePost" href="#"><img src="./assets/img/bg.jpg" alt=""></a>
+                    <a class="imagePost" href="#"><img src="https://suckhoehangngay.mediacdn.vn/zoom/680_425/154880486097817600/2020/11/14/ngu-coc-giam-can-trung-quoc-16053620167261485119306-122-0-560-700-crop-1605362138408149724092.jpg" alt=""></a>
                     <div class="content_post">
                         <a href="#"><p class="title">Hướng dẫn sử dụng Granola đúng cách</p></a>
                         <p class="contentPost">Sử dụng Granola hàng ngày chỉ với 2 muỗng cà phê, tương đương 30g ~ 100g là đã đủ lượng calo, chất dinh dưỡng cho một bữa ăn, thường được ăn cùng sữa chua không đường...
@@ -220,7 +220,53 @@
                 </div>
             </div>
         </div>
+      
 </div>
+
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+        <div class="auth-form buy-form">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Thông tin mua hàng</h3>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập địa chỉ nhận hàng">
+                    </div>
+                    <div class="auth-form__group">
+                        <p>Chọn hình thức thanh toán </p>
+                        <select name="payment" id="payment">
+                            <option value="direct">Thanh toán trực tiếp khi nhận hàng</option>
+                              <option value="online">Thanh toán qua ngân hàng</option>
+                        </select>                            
+                    </div>
+                    <div class="auth-form__group online-payment">
+
+                    </div>
+                </div>    
+                
+
+                <div class="auth-form__controls">
+                    <button class="btn btn--normal btn-back">TRỞ LẠI</button>
+                    <button class="btn btn--primary btn-signup">XÁC NHẬN</button>
+                </div>
+            
+                <div class="auth-form__socials">
+                    
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>  
         
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
