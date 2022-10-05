@@ -1,18 +1,34 @@
+function hideElement(target) {
+  target.animate({
+    opacity: "-=1"
+  }, 500, function() {
+    target.hide();
+  });
+}
+
+function showElement(target) {
+  target.animate({
+    opacity: "+=1"
+  }, 500, function() {
+    target.show();
+  });
+}
+
 $(document).ready(function(){
     // Chuyen trang
     $('.product-list-main').hide();
     $('#product-page').on('click', function(){
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
-      $('.home-main').hide();
-      $('.product-list-main').show();
+      hideElement($('.home-main'));
+      showElement($('.product-list-main'));
     })
 
     $('#home-page').on('click', function(){
       $('#product-page').removeClass('focus');
       $('#home-page').addClass('focus');
-      $('.product-list-main').hide();
-      $('.home-main').show();
+      hideElement($('.product-list-main'));
+      showElement($('.home-main'));
     })
 
     // Slider
