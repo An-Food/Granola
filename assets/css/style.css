@@ -60,7 +60,7 @@ body{
     color: #806600;
 }
 
-#nav > li .active {
+#nav > li .focus {
     color: #806600;
 }
 
@@ -665,9 +665,9 @@ p.title {
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     left: 0;
-    display: flex;
+    display: flex; 
     animation: fadeIn linear 0.1s;
 }
 
@@ -843,3 +843,113 @@ p.title {
 .auth-form__group p {
     padding: 15px;
 }
+
+
+/* Responsive*/ 
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* product */
+.fill-header{
+    width: 100%;
+    height: 40px;
+}
+
+.product-list-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-list_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-product {
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+.home-product-item {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    margin-top: 10px;
+    position: relative;
+    border: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.2s;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.home-product-item:hover {
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.home-product-item__img {
+    background-image: url(../img/p_1.png);
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 100%;
+}
+
+.home-product-item__img-goku1 {
+    background-image: url(../img/goku1-2.jpg);
+}
+
+.home-product-item__img-goku2 {
+    background-image: url(../img/goku2.png);
+}
+
+.home-product-item__name {
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 18px;
+    color: var(--text-color);
+    margin: 10px 10px 6px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.home-product-item__price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.home-product-item__price-current {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+

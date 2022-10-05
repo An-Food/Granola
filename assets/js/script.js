@@ -1,5 +1,21 @@
 $(document).ready(function(){
-    $('.modal').hide();
+    // Chuyen trang
+    $('.product-list-main').hide();
+    $('#product-page').on('click', function(){
+      $('#home-page').removeClass('focus');
+      $('#product-page').addClass('focus');
+      $('.home-main').hide();
+      $('.product-list-main').show();
+    })
+
+    $('#home-page').on('click', function(){
+      $('#product-page').removeClass('focus');
+      $('#home-page').addClass('focus');
+      $('.product-list-main').hide();
+      $('.home-main').show();
+    })
+
+    // Slider
     var count_group = $(".slider .item").length;
     var active = 0;
     var begin= true;
@@ -23,7 +39,7 @@ $(document).ready(function(){
     }, 5000);
 
     // 
-    // 
+    // San pham trang chu
     // 
     var count_group_product = $(".list .item_product").length;
   var active_product = 0;
@@ -60,6 +76,7 @@ $(document).ready(function(){
 
 
   // modal code
+  $('.modal').hide();  
   $('.btn-buy').on('click', function(){
     $('.modal').show();
   })

@@ -14,187 +14,253 @@
         <div class="header">
             <img src="./assets/img/logo.jpg" class="logo"/>
             <ul id = "nav">
-                <li><a class="active">Trang chủ</a></li>
-                <li><a>Sản phẩm</a></li>
+                <li><a id= "home-page" class="focus">Trang chủ</a></li>
+                <li><a id= "product-page" >Sản phẩm</a></li>
                 <li><a>Giới thiệu</a></li>
                 <li><a>Chăm sóc khách hàng</a></li>
             </ul>
         </div>       
 
         
-        <div class="slider">
-            <div class="item" id="item_0">
-                <img src="./assets/img/img1.jpg" alt="" />
-                <div class="content content_0">
-                    <h2>Slogan AN FOOD</h2>
-                    <div class="content1">
-                        An toàn sức khỏe<br/>
-                        An tâm sử dụng
-                    </div> 
-                </div>                   
-            </div>
-            <div class="item" id="item_1">
-                <img src="./assets/img/img2.jpg" alt="" />
-                <div class="content content_1">
-                    <h2>AN FOOD</h2>
-                    <div class="content1">
-                        "An" mang đến sự an tâm cho người tiêu dùng<br/>
-                        "Food" mong muốn đối với sự phát triển của thương hiệu trong tương lai                        
-                    </div>                    
+        <div class="home-main">
+            <div class="slider">
+                <div class="item" id="item_0">
+                    <img src="./assets/img/img1.jpg" alt="" />
+                    <div class="content content_0">
+                        <h2>Slogan AN FOOD</h2>
+                        <div class="content1">
+                            An toàn sức khỏe<br/>
+                            An tâm sử dụng
+                        </div> 
+                    </div>                   
                 </div>
-            </div>
-            <div class="item " id="item_2">
-                <img src="./assets/img/img3.jpg" alt="" />     
-                <div class="content content_2">
-                    <h2>Giá trị cốt lõi AN FOOD</h2>
-                    <div class="content1">
-                        Chất lượng<br/>
-                        Chính trực<br/>
-                        Không ngừng phát triển
-                    </div>
-                   </div>          
-            </div>
-        </div>
-       
-
-        <div class="fill">
-                     
-        </div>
-
-        <div class="banner">
-            <img src="./assets/img/banner.jpg" alt="">
-        </div>
-
-        <div class="button-sale">
-            <button>NHẬN ƯU ĐÃI NGAY</button>
-        </div>
-
-        <div class="product_main">
-            <!-- <div class="product-column-left" style='background-image: url(./assets/img/bg1.jpg);background-repeat:no-repeat;width:25%;height:100%; background-size: cover;'>               
-            </div> -->
-
-            <div class="product-column-left">               
-            </div>
-
-            <div class="container">
-                <div class="list">
-                    <div class="bg-rotate"></div>
-                      <div class="wall"></div>
-                          <div class="item_product item_product_active" id="item_product_0" data-bg="#C7DDE8" data-cl="#4A4C65">
-                              <div class="img_product"><img src="./assets/img/p_1.png"></div>               
-                          </div>
-                          <div class="item_product" id="item_product_1"  data-bg="#ADBA85" data-cl="rgb(85 98 45)">
-                              <div class="img_product"><img src="./assets/img/p_2.png"></div>               
-                          </div>
-                          <div class="item_product" id="item_product_2"  data-bg="#C2AA88" data-cl="#3D3C3A">
-                              <div class="img_product"><img src="./assets/img/p_3.png"></div>
-                          </div>
-                      </div>
-                      <div class="dot">
-                          <div id="dot_0" class="active"></div>
-                          <div id="dot_1"></div>
-                          <div id="dot_2"></div>
-                      </div>
-                      <div class="content_product">
-                          <div class="item_product" id="content_product_0">
-                              <h1>Granola 500g vị matcha</h1>
-                              <p>
-                                  Khối lượng 500g
-                              </p>
-                              <p>
-                                Hương vị matcha
-                              </p>
-                              
-                              <p class="list-button">
-                                    <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                    <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
-                              </p>
-                          </div>
-                          <div class="item_product" id="content_product_1">
-                              <h1>Granola 500g vị chocolate</h1>
-                              <p>
-                                  Khối lượng 500g
-                              </p>
-                              <p>
-                                  Hương vị chocolate
-                              </p>
-
-                              <p class="list-button">
-                                  <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                  <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
-                              </p>
-                          </div>
-                          <div class="item_product" id="content_product_2">
-                              <h1>Granola 500g vị vani</h1>
-                              <p>
-                                  Khối lượng 500g
-                              </p>
-                              <p>
-                                  Hương vị vani
-                              </p>
-
-                              <p class="list-button">
-                                  <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
-                                  <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
-                              </p>
-                          </div>
-                      </div>
-              
-                      <div class="next">
-                          <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-                          <button id="next"><i class="fa-solid fa-angle-right"></i></button>
-                         </div>  
-            </div>
-            <div class="product-column-left">               
-            </div>
-
-            <!-- <div class="product-column-right" style='background-image: url(./assets/img/bg2.jpg);background-repeat:no-repeat;width:25%;height:100%; background-size: cover;'>
-                
-            </div> -->
-        </div>
-
-        <!-- <div class="bar">
-        </div> -->
-
-        <div id="content_main">                                       
-            <div id="posts">              
-                <div class="tinTuc">
-                    <p>Bài viết</p>
-                </div>
-                <div class="post">
-                    <a class="imagePost" href="#"><img src="https://suckhoehangngay.mediacdn.vn/zoom/680_425/154880486097817600/2020/11/14/ngu-coc-giam-can-trung-quoc-16053620167261485119306-122-0-560-700-crop-1605362138408149724092.jpg" alt=""></a>
-                    <div class="content_post">
-                        <a href="#"><p class="title">Hướng dẫn sử dụng Granola đúng cách</p></a>
-                        <p class="contentPost">Sử dụng Granola hàng ngày chỉ với 2 muỗng cà phê, tương đương 30g ~ 100g là đã đủ lượng calo, chất dinh dưỡng cho một bữa ăn, thường được ăn cùng sữa chua không đường...
-                        </p>
+                <div class="item" id="item_1">
+                    <img src="./assets/img/img2.jpg" alt="" />
+                    <div class="content content_1">
+                        <h2>AN FOOD</h2>
+                        <div class="content1">
+                            "An" mang đến sự an tâm cho người tiêu dùng<br/>
+                            "Food" mong muốn đối với sự phát triển của thương hiệu trong tương lai                        
+                        </div>                    
                     </div>
                 </div>
-                <div class="post">
-                    <a class="imagePost" href="#"><img src="https://cdn.tgdd.vn/2021/03/CookProduct/5-bi-quyet-giup-giam-can-ma-khong-anh-huong-den-kich-thuoc-vong-1-adobestock164981310-1200x676.jpg" alt=""></a>
-                    <div class="content_post">
-                        <a href="#"><p class="title">Công dụng của Granola</p></a>
-                        <p class="contentPost">Granola là loại thức ăn có tác dụng tốt cho sức khỏe bởi thành phần như chất chống oxy hóa có trong các loại hạt, cung cấp chất dinh dưỡng cho cơ thể và  một  số đặc điểm nổi bật khác như: phù hợp cho  người ăn kiêng, giảm cân và ăn chay, giàu vitamin và chất khoáng cho cơ thể,… Vì vậy, nó được coi là...</p>
+                <div class="item " id="item_2">
+                    <img src="./assets/img/img3.jpg" alt="" />     
+                    <div class="content content_2">
+                        <h2>Giá trị cốt lõi AN FOOD</h2>
+                        <div class="content1">
+                            Chất lượng<br/>
+                            Chính trực<br/>
+                            Không ngừng phát triển
+                        </div>
+                       </div>          
+                </div>
+            </div>
+           
+    
+            <div class="fill">
+                         
+            </div>
+    
+            <div class="banner">
+                <img src="./assets/img/banner.jpg" alt="">
+            </div>
+    
+            <div class="button-sale">
+                <button>NHẬN ƯU ĐÃI NGAY</button>
+            </div>
+    
+            <div class="product_main">           
+                <div class="product-column-left">               
+                </div>
+    
+                <div class="container">
+                    <div class="list">
+                        <div class="bg-rotate"></div>
+                          <div class="wall"></div>
+                              <div class="item_product item_product_active" id="item_product_0" data-bg="#C7DDE8" data-cl="#4A4C65">
+                                  <div class="img_product"><img src="./assets/img/p_1.png"></div>               
+                              </div>
+                              <div class="item_product" id="item_product_1"  data-bg="#ADBA85" data-cl="rgb(85 98 45)">
+                                  <div class="img_product"><img src="./assets/img/p_2.png"></div>               
+                              </div>
+                              <div class="item_product" id="item_product_2"  data-bg="#C2AA88" data-cl="#3D3C3A">
+                                  <div class="img_product"><img src="./assets/img/p_3.png"></div>
+                              </div>
+                          </div>
+                          <div class="dot">
+                              <div id="dot_0" class="active"></div>
+                              <div id="dot_1"></div>
+                              <div id="dot_2"></div>
+                          </div>
+                          <div class="content_product">
+                              <div class="item_product" id="content_product_0">
+                                  <h1>Granola 500g vị matcha</h1>
+                                  <p>
+                                      Khối lượng 500g
+                                  </p>
+                                  <p>
+                                    Hương vị matcha
+                                  </p>
+                                  
+                                  <p class="list-button">
+                                        <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                        <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
+                                  </p>
+                              </div>
+                              <div class="item_product" id="content_product_1">
+                                  <h1>Granola 500g vị chocolate</h1>
+                                  <p>
+                                      Khối lượng 500g
+                                  </p>
+                                  <p>
+                                      Hương vị chocolate
+                                  </p>
+    
+                                  <p class="list-button">
+                                      <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                      <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
+                                  </p>
+                              </div>
+                              <div class="item_product" id="content_product_2">
+                                  <h1>Granola 500g vị vani</h1>
+                                  <p>
+                                      Khối lượng 500g
+                                  </p>
+                                  <p>
+                                      Hương vị vani
+                                  </p>
+    
+                                  <p class="list-button">
+                                      <button class="btn-buy"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                      <!-- <button><i class="fa-solid fa-heart-circle-check"></i></button> -->
+                                  </p>
+                              </div>
+                          </div>
+                  
+                          <div class="next">
+                              <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                              <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+                             </div>  
+                </div>
+                <div class="product-column-left">               
+                </div>
+            </div>
+    
+            <div id="content_main">                                       
+                <div id="posts">              
+                    <div class="tinTuc">
+                        <p>Bài viết</p>
                     </div>
-                </div>   
-                <div class="post">
-                    <a class="imagePost" href="#"><img src="https://bazaarvietnam.vn/wp-content/uploads/2022/03/harper-bazaar-an-ngu-coc-co-giam-can-khong-nyana-stoica-unsplash-e1648696188615.jpg" alt=""></a>
-                    <div class="content_post">
-                        <a href="#"><p class="title">Thực đơn ăn ngũ cốc giảm cân trong 3 ngày</p></a>
-                        <p class="contentPost">• Bữa sáng: 1 cốc (40g) ngũ cốc nguyên hạt với 1/2 cốc (120ml) sữa tách béo.<br>
-                            • Bữa ăn nhẹ: 1 quả ớt chuông nhỏ với 1 thìa súp (10g) kem phô mai ít béo.<br>                            
-                            • Bữa trưa: 1 cốc (40g) ngũ cốc nguyên hạt với 1/2 cốc (120ml) sữa tách béo....</p>
+                    <div class="post">
+                        <a class="imagePost" href="#"><img src="https://suckhoehangngay.mediacdn.vn/zoom/680_425/154880486097817600/2020/11/14/ngu-coc-giam-can-trung-quoc-16053620167261485119306-122-0-560-700-crop-1605362138408149724092.jpg" alt=""></a>
+                        <div class="content_post">
+                            <a href="#"><p class="title">Hướng dẫn sử dụng Granola đúng cách</p></a>
+                            <p class="contentPost">Sử dụng Granola hàng ngày chỉ với 2 muỗng cà phê, tương đương 30g ~ 100g là đã đủ lượng calo, chất dinh dưỡng cho một bữa ăn, thường được ăn cùng sữa chua không đường...
+                            </p>
+                        </div>
                     </div>
+                    <div class="post">
+                        <a class="imagePost" href="#"><img src="https://cdn.tgdd.vn/2021/03/CookProduct/5-bi-quyet-giup-giam-can-ma-khong-anh-huong-den-kich-thuoc-vong-1-adobestock164981310-1200x676.jpg" alt=""></a>
+                        <div class="content_post">
+                            <a href="#"><p class="title">Công dụng của Granola</p></a>
+                            <p class="contentPost">Granola là loại thức ăn có tác dụng tốt cho sức khỏe bởi thành phần như chất chống oxy hóa có trong các loại hạt, cung cấp chất dinh dưỡng cho cơ thể và  một  số đặc điểm nổi bật khác như: phù hợp cho  người ăn kiêng, giảm cân và ăn chay, giàu vitamin và chất khoáng cho cơ thể,… Vì vậy, nó được coi là...</p>
+                        </div>
+                    </div>   
+                    <div class="post">
+                        <a class="imagePost" href="#"><img src="https://bazaarvietnam.vn/wp-content/uploads/2022/03/harper-bazaar-an-ngu-coc-co-giam-can-khong-nyana-stoica-unsplash-e1648696188615.jpg" alt=""></a>
+                        <div class="content_post">
+                            <a href="#"><p class="title">Thực đơn ăn ngũ cốc giảm cân trong 3 ngày</p></a>
+                            <p class="contentPost">• Bữa sáng: 1 cốc (40g) ngũ cốc nguyên hạt với 1/2 cốc (120ml) sữa tách béo.<br>
+                                • Bữa ăn nhẹ: 1 quả ớt chuông nhỏ với 1 thìa súp (10g) kem phô mai ít béo.<br>                            
+                                • Bữa trưa: 1 cốc (40g) ngũ cốc nguyên hạt với 1/2 cốc (120ml) sữa tách béo....</p>
+                        </div>
+                    </div>  
+                    <div class="post">
+                        <a class="imagePost" href="#"><img src="https://bazaarvietnam.vn/wp-content/uploads/2022/03/harper-bazaar-an-ngu-coc-co-giam-can-khong-pixabay-3.jpg" alt=""></a>
+                        <div class="content_post">
+                            <a href="#"><p class="title">5 lưu ý khi ăn ngũ cốc giảm cân</p></a>
+                            <p class="contentPost">Ăn ngũ cốc giảm cân là chế độ ăn thay thế hai bữa ăn trong ngày bằng ngũ cốc và sữa. Đây được xem là phương pháp giảm cân nhanh chóng, đồng thời bổ sung nhiều chất xơ cho cơ thể nên rất được chị em ưa chuộng, tuy nhiên, cần chú ý đến 5 điều sau...</p>
+                        </div>
+                    </div>                                         
                 </div>  
-                <div class="post">
-                    <a class="imagePost" href="#"><img src="https://bazaarvietnam.vn/wp-content/uploads/2022/03/harper-bazaar-an-ngu-coc-co-giam-can-khong-pixabay-3.jpg" alt=""></a>
-                    <div class="content_post">
-                        <a href="#"><p class="title">5 lưu ý khi ăn ngũ cốc giảm cân</p></a>
-                        <p class="contentPost">Ăn ngũ cốc giảm cân là chế độ ăn thay thế hai bữa ăn trong ngày bằng ngũ cốc và sữa. Đây được xem là phương pháp giảm cân nhanh chóng, đồng thời bổ sung nhiều chất xơ cho cơ thể nên rất được chị em ưa chuộng, tuy nhiên, cần chú ý đến 5 điều sau...</p>
-                    </div>
-                </div>                                         
-            </div>  
+            </div>
         </div>
-        
+
+        <!-- Sản phẩm-->
+        <div class="product-list-main">
+            <div class="fill-header"></div>
+            <div class="product-list_container">
+                <div class="product-column-left">               
+                </div>
+                <div class="home-product">
+                    <div class="grid__row">
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                
+                        <div class="grid__column-2-4 ">
+                            <div class="home-product-item ">
+                                <div class="home-product-item__img"></div>
+                                <h4 class="home-product-item__name">Granola 250g vị chocolate</h4>
+                                <div class="home-product-item__price">                        
+                                    <span class="home-product-item__price-current">200000đ</span>
+                                </div>                                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-column-right">               
+                </div>
+            </div>
+        </div>
+
         <div class="footer">
             <div class="footerItem">
                 <img src="./assets/img/logo_removed.png">
@@ -223,7 +289,8 @@
       
 </div>
 
-<div class="modal">
+<!-- Dat hang -->
+<!-- <div class="modal">
     <div class="modal__overlay"></div>
     <div class="modal__body">
         <div class="auth-form buy-form">
@@ -266,8 +333,11 @@
             </div>
         </div> 
     </div>
-</div>  
+</div>   -->
         
+
+
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./assets/js/script.js"></script>
