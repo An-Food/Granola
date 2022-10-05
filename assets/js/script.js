@@ -31,6 +31,57 @@ $(document).ready(function(){
       showElement($('.home-main'));
     })
 
+    $('.btn-sale').on('click', function(){
+      $('#home-page').removeClass('focus');
+      $('#product-page').addClass('focus');
+      hideElement($('.home-main'));
+      showElement($('.product-list-main'));
+    })
+
+    $('.banner_img').on('click', function(){
+      $('#home-page').removeClass('focus');
+      $('#product-page').addClass('focus');
+      hideElement($('.home-main'));
+      showElement($('.product-list-main'));
+    })
+
+    // Thả tim
+    
+    $('.btn-heart_0').click(function(){
+      $('.btn-heart_0').toggleClass('btn-hearted');
+    })
+
+    $('.btn-heart_1').click(function(){
+      $('.btn-heart_1').toggleClass('btn-hearted');
+    })
+
+    $('.btn-heart_2').click(function(){
+      $('.btn-heart_2').toggleClass('btn-hearted');
+    })
+
+    $('.like_0').click(function(){
+      $('.like_0').toggleClass('home-product-item__liked');
+    })
+
+    $('.like_1').click(function(){
+      $('.like_1').toggleClass('home-product-item__liked');
+    })
+
+    $('.like_2').click(function(){
+      $('.like_2').toggleClass('home-product-item__liked');
+    })
+
+    $('.like_3').click(function(){
+      $('.like_3').toggleClass('home-product-item__liked');
+    })
+
+    $('.like_4').click(function(){
+      $('.like_4').toggleClass('home-product-item__liked');
+    })
+
+    $('.like_5').click(function(){
+      $('.like_5').toggleClass('home-product-item__liked');
+    })
     // Slider
     var count_group = $(".slider .item").length;
     var active = 0;

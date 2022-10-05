@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
 :root{
-    --primary-background__color: #806600;
+    --primary-background__color: #997a00;
     --primary-word__color: white;
 }
 
@@ -22,6 +22,7 @@ body{
 }
 
 .logo{
+    margin-left: 20px;
     border-radius: 50%;
     width:40px;
     height: 40px; display: inline-block;
@@ -57,21 +58,21 @@ body{
 }
 
 #nav > li:hover > a:hover {
-    color: #806600;
+    color: var(--primary-background__color);
 }
 
 #nav > li .focus {
-    color: #806600;
+    color: var(--primary-background__color)
 }
 
 .header{   
-    background-color: #333333;
+    background-color: #cccccc;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=80);
     -moz-opacity: 0.80;
     -khtml-opacity: 0.8;
     opacity: 0.8;
-    color: white;
+    color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -113,7 +114,7 @@ body{
 
 .bar{
     height: 60px;
-    background-color: #806600;
+    background-color: var(--primary-background__color);
     text-align: center;
     line-height: 60px;
     color: white;
@@ -213,11 +214,11 @@ body{
 .content{
     position: absolute;
     width: 500px;
-    color:#806600;
+    color: var(--primary-background__color);
 }
 
 .content_0{
-    top: 10%;
+    top: 20%;
     right: 65%;
 }
 
@@ -238,10 +239,11 @@ h2{
 
 .content1{
     font-size: 30px;
+    font-weight: bold;
 }
 .button{
     margin:30px 0 ;
-    border:1px solid #806600;
+    border:1px solid var(--primary-background__color);
     width:max-content;
     padding:10px 20px;
     cursor: pointer;
@@ -422,7 +424,7 @@ h2{
     right:30px ;
    width:300px;
    height: 100%;
-   top:50px;
+   top: 30px;
    overflow: hidden;
 }
 .content_product .item_product{
@@ -440,9 +442,10 @@ h2{
 .content_product button:nth-child(1):hover{
     background-color: #d5dee3;
 }
+
 .next{
     position: absolute;
-    bottom:60px;
+    top: 650px;
     right:60px;
    
 }
@@ -458,11 +461,21 @@ h2{
     background-color: #ccc;
 }
 
-.btn-buy, .btn-add_cart {
+.btn-hearted i{
+    color: red;
+}
+
+.btn-heart, .btn-add_cart {
     
 }
 
-.btn-buy:hover{
+.btn-product:last-child {
+    margin-top: 10px;
+    width: 235px;
+    font-weight: bold;
+}
+
+.btn-product:hover{
     background-color: #ccc;
 }
 
@@ -550,7 +563,7 @@ p.title {
 .footer{
     display: flex;
     min-height: 100px;
-    background-color: #806600;
+    background-color: var(--primary-background__color);
     justify-content: center;
     align-items: center;
     height: 300px;
@@ -577,11 +590,6 @@ p.title {
     font-weight: bold;
 }
 
-#footer .footerItem:first-child  {
-    font-family: logoFont;
-    font-size: 50px;
-}
-
 .footerItem a {
     color: #fff;
 }
@@ -604,41 +612,55 @@ p.title {
     color: #fff;
 }
 
+.mxh .shopee{
+    width: 55px;
+    height: 55px;
+}
+
 .banner{
     width: 100%;
-    height: 16vh;
+    height: 19vh;
     background-color: white;
     text-align: center;
 }
 
 .banner img{
     width: 35%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .button-sale{
     width: 100%;
     height: 4vh;
-    text-align: center;
     background-color: white;
     z-index: -1;
+}
+
+.banner_img{
+    z-index: 0;
+    position: absolute;
+    cursor: pointer;
 }
 
 .button-sale button{
     line-height: 3vh;
     padding: 2px 100px;
-    background-color: #806600;
+    background-color: var(--primary-background__color);
     color: white;
     border: 0px none;
     border-radius: 5px;
-    position: absolute;
-    left: 40%;
+    position: absolute;    
+}
+
+.align-center{
+  display: flex;
+  justify-content: center;
 }
 
 .button-sale button:hover{
     background-color: white;
     color: black;
-    border: 1px solid #806600;
+    border: 1px solid var(--primary-background__color);
 }
 
 
@@ -929,23 +951,25 @@ p.title {
 }
 
 .home-product-item__img {
-    background-image: url(../img/p_1.png);
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
     padding-top: 100%;
 }
 
-.home-product-item__img-goku1 {
-    background-image: url(../img/goku1-2.jpg);
+.product-item_0 {
+    background-image: url(../img/p_1.png);
 }
 
-.home-product-item__img-goku2 {
-    background-image: url(../img/goku2.png);
+.product-item_1 {
+    background-image: url(../img/p_2.png);
 }
 
+.product-item_2 {
+    background-image: url(../img/p_3.png);
+}
 .home-product-item__name {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400px;
     line-height: 18px;
     color: var(--text-color);
@@ -961,12 +985,48 @@ p.title {
     align-items: baseline;
     flex-wrap: wrap;
     margin: 10px 0;
+    justify-content: space-between;
 }
 
 .home-product-item__price-current {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--primary-color);
     margin-left: 10px;
 }
 
+.home-product-item__like {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
 
+.home-product-item__liked {
+    color: red;
+}
+
+.home-product-item__origin {
+    display: flex;
+    margin: 3px 10px 0;
+    color:rgba(0, 0, 0, 0.65);
+    font-size: 12px;
+    font-weight: 300;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    
+}
+
+.btn-buy_now, .btn-add_to__carts{
+    padding: 10px;
+    width: 170px;
+}
+
+.btn-buy_now{
+    background-color: var(--primary-background__color);
+    color: white;
+    border: none;
+}
+
+.btn-buy_now:hover {
+    background-color: #ccc;
+    color: black;
+}
