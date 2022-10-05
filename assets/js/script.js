@@ -22,6 +22,9 @@ $(document).ready(function(){
       $('#product-page').addClass('focus');
       hideElement($('.home-main'));
       showElement($('.product-list-main'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
     })
 
     $('#home-page').on('click', function(){
@@ -29,6 +32,9 @@ $(document).ready(function(){
       $('#home-page').addClass('focus');
       hideElement($('.product-list-main'));
       showElement($('.home-main'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
     })
 
     $('.btn-sale').on('click', function(){
@@ -36,6 +42,9 @@ $(document).ready(function(){
       $('#product-page').addClass('focus');
       hideElement($('.home-main'));
       showElement($('.product-list-main'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
     })
 
     $('.banner_img').on('click', function(){
@@ -43,6 +52,9 @@ $(document).ready(function(){
       $('#product-page').addClass('focus');
       hideElement($('.home-main'));
       showElement($('.product-list-main'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
     })
 
     // Thả tim
