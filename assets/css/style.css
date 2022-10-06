@@ -245,8 +245,8 @@ body{
 }
 
 .content_0{
-    top: 20%;
-    right: 65%;
+    top: 15%;
+    right: 1%;
 }
 
 .content_1{
@@ -332,6 +332,8 @@ h2{
     left:30px;
     transform: translate(0, -50%);
 }
+
+
 .dot div{
     width:10px;
     height:10px;
@@ -343,6 +345,11 @@ h2{
 .dot .active_dot{
     background-color: #b7c18d;
 }
+
+.dot_horizontal .active_dot{
+    background-color: var(--primary-background__color);
+}
+
 .list{
     position: absolute;
     width:60%;
@@ -694,8 +701,7 @@ p.title {
 /* MODAL */
 
 .btn-close{
-    margin: 0;
-    padding: 0;
+    margin: 5px;
     font-size: 30px;
     cursor: pointer;
 }
@@ -765,10 +771,12 @@ p.title {
 
 .auth-form__group-gender{
     font-size: 20px;
+    font-weight: bold;
 }
 
 .input-sub{
     font-size: 18px;
+    font-weight: bold;
 }
 
 .auth-form{
@@ -784,9 +792,10 @@ p.title {
 .forgot_text{
     color: red;
     margin-top: 15px;
+    font-weight: bold;
 }
 
-.auth-form__container:last-child{
+.contain_separate{
     border-right: 1px solid #ccc;
 }
 
@@ -799,7 +808,7 @@ p.title {
 .auth-form__heading{
     font-size: 24px;
     font-weight: bold;
-    color: blue;
+    color: var(--primary-background__color);
 }
 
 .auth-form__form{
@@ -829,6 +838,7 @@ p.title {
     font-size: 12px;
     line-height: 18px;
     text-align: center;
+    font-weight: bold;
 }
 
 .auth-form__controls{
@@ -839,11 +849,12 @@ p.title {
 .btn{
     min-width: 130px;
     height: 30px;
+    margin: 15px;
     text-decoration: none;
-    border: none;
-    border-radius: 2px;
+    border: 2px solid var(--primary-background__color);
+    border-radius: 5px;
     font-size: 15px;
-    padding: 0 8px;
+    padding: 0 10px;
     outline: none;
     cursor: pointer;
     color: black;
@@ -854,13 +865,33 @@ p.title {
     line-height: 15px;
 }
 
+.btn:hover{
+    background-color: #ccc;
+}
+
+.empty_field::-webkit-input-placeholder{
+    font-size: 16px;
+    color: red;
+}
+
 .auth-form__help{
     display: flex;
     justify-content: flex-end;
 }
 
 .auth-form__help--forgot{
-    color: var(--primary-word__color);
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-form__help--forgot:hover{
+    color: #ccc;
+}
+
+.password_forgot{
+    animation: fadeIn linear 0.1s;
+    display: none;
 }
 
 /* Responsive*/ 
@@ -909,7 +940,7 @@ p.title {
     right: 0;
     width: 100%;
     height: 108%;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .product-list_container{
@@ -919,9 +950,10 @@ p.title {
 
 .product-detail{
     border: 2px solid var(--primary-background__color);
-    background-color: var(--primary-hover__color);
     margin: 10px;
+    font-weight: bold;
 }
+
 
 .home-product {
     align-items: center;
