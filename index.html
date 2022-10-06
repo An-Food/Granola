@@ -23,7 +23,17 @@
             </div>
 
             <div class="user-interface">
+                <div class="shopping-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
 
+                <div class = "login-signup_button">
+                    <button class="btn-login_signup">Đăng nhập/ Đăng ký</button>
+                </div>
+
+                <div class = "user-avt">
+                    <i class="fa-solid fa-user"></i>
+                </div>
             </div>
         </div>       
 
@@ -354,52 +364,104 @@
       
 </div>
 
-<!-- Dat hang -->
-<div class="modal-container">
+<!-- Login/Signup -->
+<div class="modal-container">    
     <div class="modal">
-        <div class="modal__overlay"></div>
+        <div class="modal__overlay">            
+        </div>
         <div class="modal__body">
-            <div class="auth-form buy-form">
+            
+            <!-- Register -->
+            <div class="auth-form register-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Thông tin mua hàng</h3>
+                        <h3 class="auth-form__heading">Đăng ký</h3>
                     </div>
-    
+
                     <div class="auth-form__form">
                         <div class="auth-form__group">
-                            <input type="text" class="auth-form__input" placeholder="Nhập họ và tên">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Nhập số điện thoại">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Nhập địa chỉ nhận hàng">
-                        </div>
-                        <div class="auth-form__group">
-                            <p>Chọn hình thức thanh toán </p>
-                            <select name="payment" id="payment">
-                                <option value="direct">Thanh toán trực tiếp khi nhận hàng</option>
-                                <option value="online">Thanh toán qua ngân hàng</option>
-                            </select>                            
-                        </div>
-                        <div class="auth-form__group online-payment">
-    
-                        </div>
-                    </div>    
-                    
-    
-                    <div class="auth-form__controls">
-                        <button class="btn btn--normal btn-back">TRỞ LẠI</button>
-                        <button class="btn btn--primary btn-signup">XÁC NHẬN</button>
-                    </div>
-                
-                    <div class="auth-form__socials">
+                            <p class="input-sub">Tên tài khoản</p>
+                            <input type="text" class="auth-form__input auth-form__input-username">
+                        </div>       
                         
+                        <div class="auth-form__group">
+                            <p class="input-sub">Email</p>
+                            <input type="text" class="auth-form__input auth-form__input-email">
+                        </div>       
+                        
+                        <div class="auth-form__group">
+                            <p class="input-sub">Mật khẩu</p>
+                            <input type="password" class="auth-form__input auth-form__input-password">
+                        </div>
+                        <div class="auth-form__group">
+                            <p class="input-sub">Nhập lại mật khẩu</p>
+                            <input type="password" class="auth-form__input auth-form__input-repassword">
+                        </div>
+                        <div class="auth-form__group-gender">
+                            <input type="radio" id="auth-form__input-gender" name="auth-form__input-gender"> Nam
+                            <input type="radio" id="auth-form__input-gender" name="auth-form__input-gender"> Nữ
+                        </div>
+                    </div>
+    
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            DỮ LIỆU CÁ NHÂN CỦA BẠN SẼ ĐƯỢC SỬ DỤNG ĐỂ HỖ TRỢ TRẢI NGHIỆM CỦA BẠN TRÊN TOÀN BỘ TRANG WEB NÀY
+                        </p>
+
+                    </div>
+    
+                    <div class="auth-form__controls">                        
+                        <button class="btn btn-signup">ĐĂNG KÝ</button>
                     </div>
                 </div>
             </div> 
+            
+            <!-- Login -->
+            <div class="auth-form login-form">
+                <div class="close_container"><i class="fa-solid fa-xmark btn-close" ></i></div> 
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <p class="input-sub">Tên tài khoản hoặc email</p>
+                            <input type="text" class="auth-form__input auth-form__login-email">
+                        </div>
+                        <div class="auth-form__group">
+                            <p class="input-sub">Mật khẩu</p>
+                            <input type="password" class="auth-form__input auth-form__login-password">
+                        </div>  
+                        
+                        <div class="password_forgot">                            
+                            <div class="auth-form__group">
+                                <p class="input-sub">Mã xác thực</p>
+                                <input type="password" class="auth-form__input auth-form__login-password">
+                            </div>   
+                            <div class="forgot_text">
+                                Chúng tôi đã gửi mã xác thực về email của bạn, vui lòng kiểm tra hộp thư trong ít phút
+                            </div>                     
+                        </div>
+                    </div>
+    
+                   
+                    
+                    <div class="auth-form__aside">
+                        <p class="auth-form__help">                            
+                            <a class = "auth-form__help--link auth-form__help--forgot">Quên mật khẩu?</a>                    
+                        </p>
+
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn btn-login">ĐĂNG NHẬP</button>
+                    </div>     
+                                               
+                </div>
+            </div>            
         </div>
-    </div>  
+    </div>
 </div>
         
 

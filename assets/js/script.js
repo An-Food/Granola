@@ -155,11 +155,11 @@ $(document).ready(function(){
 
 
   // modal code
-  $('.btn-buy_now').on('click', function(){
+  $('.btn-login_signup').on('click', function(){
     $('.modal-container').css("display", "block");
   })
 
-  $('.btn-back').on('click', function(){
+  $('.btn-close').on('click', function(){
     $('.modal-container').css("display", "none");
   })
 });

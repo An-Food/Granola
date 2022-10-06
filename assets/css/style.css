@@ -89,13 +89,33 @@ body{
 .user-interface{
     width: 30%;
     height: 100%;
+    display: flex;
+    font-size: 30px;
+    justify-content: flex-end;
 }
+
+
 
 .header li{
     display: inline-block;
     font-size: 25px;
     margin-left:20px;
     font-weight: bold;
+}
+
+.login-signup_button button{
+    font-size: 20px;
+    border: 0px;
+    background-color: #cccccc;
+    margin: 0 30px;
+    padding: 5px 25px;
+    transform: translateY(-5px);
+}
+
+.login-signup_button button:hover{
+    background-color: var(--primary-hover__color);
+    color: var(--primary-background__color);
+    border-bottom: 3px solid gray;
 }
 
 #main{
@@ -672,12 +692,25 @@ p.title {
 
 
 /* MODAL */
-.fadeIn{
-    animation: fadeIn linear 0.1s;
+
+.btn-close{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-.fadeOut{
-    animation: fadeOut linear 0.1s;
+.btn-close:hover{
+    color: red;
+}
+
+.close_container{
+    float: right;
+    position: relative;
+}
+
+.modal-container{
+    display: none;
 }
 
 @keyframes fadeIn {
@@ -686,15 +719,6 @@ p.title {
     }
     to {
         opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }
 
@@ -707,18 +731,15 @@ p.title {
     }
 }
 
-.modal-container{
-    display: none;
-}
-
-.modal{    
+.modal{
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
-    display: flex; 
+    display: flex;
     animation: fadeIn linear 0.1s;
+    z-index: 1;
 }
 
 .modal__overlay{
@@ -731,37 +752,54 @@ p.title {
 .modal__body{       
     --growth-from: 0.7;
     --growth-to: 1;
+    display: flex;
     margin: auto;
     position: relative;
     z-index: 1;
     animation: growth linear 0.1s;
 }
 
+.auth-form__group{
+    margin-bottom: 15px;
+}
+
+.auth-form__group-gender{
+    font-size: 20px;
+}
+
+.input-sub{
+    font-size: 18px;
+}
+
 .auth-form{
     width: 500px;
-    background-color: white;
-    border-radius: 5px;    
+    background-color: white;    
+}
+
+.auth-form__container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.forgot_text{
+    color: red;
+    margin-top: 15px;
+}
+
+.auth-form__container:last-child{
+    border-right: 1px solid #ccc;
 }
 
 .auth-form__header{
+    
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin: 0 36px;
-    padding-top: 30px;
 }
 
 .auth-form__heading{
     font-size: 24px;
     font-weight: bold;
-    color: #000;
-}
-
-.auth-form_switch-btn{
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--primary-word__color);
-    cursor: pointer;
+    color: blue;
 }
 
 .auth-form__form{
@@ -771,7 +809,6 @@ p.title {
 .auth-form__input{
     width: 100%;
     height: 40px;
-    margin-top: 16px;
     padding: 0 12px;
     font-size: 18px;
     border: 1px solid var(--primary-background__color);
@@ -794,26 +831,9 @@ p.title {
     text-align: center;
 }
 
-.auth-form__text-link{
-    color: var(--primary-word__color);
-    text-decoration: none;
-}
-
 .auth-form__controls{
-    margin: 50px 36px;
+    margin: 20px;
     display: flex;
-    justify-content: flex-end;
-}
-
-#payment{
-    width: 100%;
-    height: 40px;
-    margin-top: 16px;
-    padding: 0 12px;
-    font-size: 18px;
-    border: 1px solid var(--primary-background__color);
-    border-radius: 2px;  
-    outline: none; 
 }
 
 .btn{
@@ -834,77 +854,14 @@ p.title {
     line-height: 15px;
 }
 
-.btn.btn--primary{
-    color: var(--primary-word__color);
-    background-color: var(--primary-background__color);
-    margin-left: 20px;
-}
-
-.btn.btn--normal:hover {
-    background-color: rgba(0,0,0,0.2);
-}
-
-.auth-form__socials{
-    margin-top: 24px;
-    background-color: #f5f5f5;
-    padding: 16px 36px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 22px;
-}
-
-.btn--size-s{
-    height: 32px;
-    font-size: 12px;
-}
-
-.auth-form__socials--iconn{
-    font-size: 18px;
-}
-
-.auth-form__socials--facebook{
-    color: white;
-    background-color: #3A5A98;
-}
-
-.auth-form__socials--facebookk
-.auth-form__socials--icon{
-    color: white;
-}
-
-.auth-form__socials--title{
-    margin: 0 36px;
-}
-
-.auth-form__socials--google{
-    background-color: white;
-}
-
 .auth-form__help{
     display: flex;
     justify-content: flex-end;
 }
 
-.auth-form__help--link{
-    text-decoration: none;
-    font-size: 14px;
-    color: #939393;
-}
-
-.auth-form__help--separate{
-    display: block;
-    margin: 0px 16px;
-    border-left: 2px solid var(--primary-background__color);
-}
-
 .auth-form__help--forgot{
     color: var(--primary-word__color);
 }
-
-.auth-form__group p {
-    padding: 15px;
-}
-
 
 /* Responsive*/ 
 .grid__row {
@@ -987,7 +944,7 @@ p.title {
 }
 
 .home-product-item:hover {
-    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
 
