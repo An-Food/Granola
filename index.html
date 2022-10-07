@@ -29,11 +29,18 @@
 
                 <div class = "login-signup_button">
                     <button class="btn-login_signup">Đăng nhập/ Đăng ký</button>
+                    <div class="user_subnav">
+                        <div class = "user-avt">
+                            <i class="fa-solid fa-user"></i><span class="user_name">aaaaaa</span>
+                        </div>
+                        <ul class="subnav">
+                            <li><a href="">Cập nhật/Xem thông tin</a></li>
+                            <li><a href="">Xem đơn hàng</a></li>
+                            <li><a href="">Đăng xuất</a></li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class = "user-avt">
-                    <i class="fa-solid fa-user"></i>
-                </div>
+                
             </div>
         </div>       
 
@@ -397,18 +404,14 @@
                             <p class="input-sub">Nhập lại mật khẩu</p>
                             <input type="password" class="auth-form__input auth-form__input-repassword">
                         </div>
-                        <!-- <div class="auth-form__group-gender">
-                            <input type="radio" id="auth-form__input-gender" name="auth-form__input-gender"> Nam
-                            <input type="radio" id="auth-form__input-gender" name="auth-form__input-gender"> Nữ
-                        </div> -->
                     </div>
     
-                    <div class="auth-form__aside">
+                    <!-- <div class="auth-form__aside">
                         <p class="auth-form__policy-text">
-                            DỮ LIỆU CÁ NHÂN CỦA BẠN SẼ ĐƯỢC SỬ DỤNG ĐỂ HỖ TRỢ TRẢI NGHIỆM CỦA BẠN TRÊN TOÀN BỘ TRANG WEB NÀY
+                            
                         </p>
 
-                    </div>
+                    </div> -->
     
                     <div class="auth-form__controls">                        
                         <button class="btn btn-signup">ĐĂNG KÝ</button>
@@ -459,7 +462,61 @@
                     </div>     
                                                
                 </div>
-            </div>            
+            </div> 
+
+            <!-- Thông tin tài khoản -->
+            <div class="auth-form_profile-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header_profile">
+                        <h3 class="auth-form__heading">Thông tin tài khoản</h3>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Tên tài khoản:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-username">
+                        </div>       
+                        
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Email:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-email">
+                        </div>       
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Họ và tên đệm:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-first-name">
+                        </div>     
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Tên:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-last-name">
+                        </div>     
+                        <div class="auth-form__group auth-form__group-gender">
+                            <p class="input-sub_profile">Giới tính:</p>
+                            <div><input type="radio" id="auth-form__input-gender" name="auth-form__input-gender" value="0" checked="true"> Nam
+                                <input type="radio" id="auth-form__input-gender" name="auth-form__input-gender" value="1"> Nữ</div>
+                        </div>
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Số điện thoại:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-number">
+                        </div>
+                        <div class="auth-form__group">
+                            <p class="input-sub_profile">Địa chỉ:</p>
+                            <input type="text" class="auth-form__input_profile auth-form__input-address">
+                        </div>
+                    </div>
+    
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            DỮ LIỆU CÁ NHÂN CỦA BẠN SẼ ĐƯỢC SỬ DỤNG ĐỂ HỖ TRỢ TRẢI NGHIỆM CỦA BẠN TRÊN TOÀN BỘ TRANG WEB NÀY
+                        </p>
+
+                    </div>
+    
+                    <div class="auth-form__controls_profile">                        
+                        <button class="btn btn-signup_profile">Xác nhận</button>
+                        <button class="btn btn-back_profile">Bỏ qua</button>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
 </div>

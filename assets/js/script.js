@@ -14,6 +14,27 @@ function showElement(target) {
   });
 }
 
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+function isValidUserName(username) {
+  var regex = /^([a-zA-Z0-9]{8,12})+$/;
+  return regex.test(username);
+}
+
+var user;
+var m = 0;
+const user_name = [];
+const password = [];
+const email = [];
+const first_name = [];
+const last_name = [];
+const gender = [];
+const number = [];
+const address = [];
+
 $(document).ready(function(){
     // Chuyen trang
     $('.product-list-main').hide();
@@ -156,6 +177,8 @@ $(document).ready(function(){
 
   // modal code
   $('.btn-login_signup').on('click', function(){
+    $('.auth-form__input').removeClass("empty_field");
+    $('.auth-form__input').removeAttr('placeholder');
     $('.auth-form__input').val('');
     $('.modal-container').css("display", "block");
   })
@@ -179,29 +202,40 @@ $(document).ready(function(){
   })
 
   // Tạo tài khoản
-  var m = 0;
-  const user_name = [];
-  const password = [];
-  const email = [];
   $('.btn-signup').click(function(){
     var F = 0;       
         if(!$('.auth-form__input-username').val()){
             $('.auth-form__input-username').addClass("empty_field");
             $('.auth-form__input-username').attr("placeholder", "Không được để trống!");        
             F = 1;    
-        }    
+        }  
+        else if(!isValidUserName($('.auth-form__input-username').val())){
+          $('.auth-form__input-username').addClass("empty_field");
+          $('.auth-form__input-username').val('');
+          $('.auth-form__input-username').attr("placeholder", "Tên tài khoản 8-12 kí tự không bao gồm kí tự đặc biệt");
+          F = 1;
+        }  
 
         if(!$('.auth-form__input-email').val()){
             $('.auth-form__input-email').addClass("empty_field");
             $('.auth-form__input-email').attr("placeholder", "Không được để trống!");
             F = 1;
             
-        }
-
+        } else if(!isEmail($('.auth-form__input-email').val())){
+          $('.auth-form__input-email').addClass("empty_field");
+          $('.auth-form__input-email').val('');
+          $('.auth-form__input-email').attr("placeholder", "Email không hợp lệ!");
+          F = 1;
+      }
         if(!$('.auth-form__input-password').val()){
             $('.auth-form__input-password').addClass("empty_field");
             $('.auth-form__input-password').attr("placeholder", "Không được để trống!");        
             F = 1;    
+        } else if($('.auth-form__input-password').val().length < 8){
+          $('.auth-form__input-password').addClass("empty_field");
+          $('.auth-form__input-password').val('');
+          $('.auth-form__input-password').attr("placeholder", "Mật khẩu trên 8 kí tự!");        
+          F = 1;  
         }
 
         if(!$('.auth-form__input-repassword').val()){
@@ -209,6 +243,12 @@ $(document).ready(function(){
             $('.auth-form__input-repassword').attr("placeholder", "Không được để trống!");     
             F = 1;       
         }
+        else if($('.auth-form__input-repassword').val() != $('.auth-form__input-password').val()){
+          $('.auth-form__input-repassword').addClass("empty_field");
+          $('.auth-form__input-repassword').val('');
+          $('.auth-form__input-repassword').attr("placeholder", "Mật khẩu nhập lại không giống!");  
+          F = 1;   
+        }   
         
         if(m >0){
             for(let i=0; i<m; i++){
@@ -227,23 +267,90 @@ $(document).ready(function(){
             }
         }
 
-        if($('.auth-form__input-repassword').val() != $('.auth-form__input-password').val()){
-            $('.auth-form__input-repassword').addClass("empty_field");
-            $('.auth-form__input-repassword').val('');
-            $('.auth-form__input-repassword').attr("placeholder", "Mật khẩu nhập lại không giống!");  
-            F = 1;   
-        }
-
+            
         if(F == 0){
             user_name[m] = $('.auth-form__input-username').val();
             password[m] = $('.auth-form__input-password').val(); 
-            email[m] = $('.auth-form__input-emmail').val(); 
+            email[m] = $('.auth-form__input-email').val(); 
             m++;
-            alert("Đăng ký thành công!");  
-            $('.modal-container').css("display", "none");
-            $('.password_forgot').css("display", "none");
-            $('.auth-form__help--forgot').css("display", "block");
+            $('.auth-form').css("display", "none");
+            $('.auth-form_profile-form').css("display", "block");
+            $('.auth-form__input_profile').removeAttr('placeholder');
+
+            // nhập thông tin
+            $('.auth-form__input-username').val(user_name[m-1]);
+            $('.auth-form__input-email').val(email[m-1]); 
         }
+  })
+
+  $('.btn-signup_profile').click(function(){
+    var F = 0;
+    if(!$('.auth-form__input-username').val()){
+      $('.auth-form__input-username').addClass("empty_field");
+      $('.auth-form__input-username').attr("placeholder", "Không được để trống!");        
+      F = 1;    
+    }  
+    else if(!isValidUserName($('.auth-form__input-username').val())){
+      $('.auth-form__input-username').addClass("empty_field");
+      $('.auth-form__input-username').val('');
+      $('.auth-form__input-username').attr("placeholder", "Tên tài khoản 8-12 kí tự không bao gồm kí tự đặc biệt");
+      F = 1;
+    }  
+
+    if(!$('.auth-form__input-email').val()){
+        $('.auth-form__input-email').addClass("empty_field");
+        $('.auth-form__input-email').attr("placeholder", "Không được để trống!");
+        F = 1;
+        
+    } else if(!isEmail($('.auth-form__input-email').val())){
+      $('.auth-form__input-email').addClass("empty_field");
+      $('.auth-form__input-email').val('');
+      $('.auth-form__input-email').attr("placeholder", "Email không hợp lệ!");
+      F = 1;
+    }
+    if(!$('.auth-form__input-first-name').val()){
+      $('.auth-form__input-first-name').addClass("empty_field");
+      $('.auth-form__input-first-name').attr("placeholder", "Không được để trống!");
+      F = 1;
+    }
+    if(!$('.auth-form__input-last-name').val()){
+      $('.auth-form__input-last-name').addClass("empty_field");
+      $('.auth-form__input-last-name').attr("placeholder", "Không được để trống!");
+      F = 1;
+    }
+    if(F == 0){
+      user_name[m-1] = $('.auth-form__input-username').val();            
+      email[m-1] = $('.auth-form__input-email').val(); 
+      first_name[m-1] = $('.auth-form__input-first-name').val(); 
+      last_name[m-1] = $('.auth-form__input-last-name').val(); 
+      gender[m-1] = $("input[name='auth-form__input-gender']:checked").val();
+      number[m-1] = $('.auth-form__input-number').val(); 
+      address[m-1] = $('.auth-form__input-address').val(); 
+      // for(var i = 0; i < m; i++){
+      //   console.log(user_name[i]);
+      //   console.log(email[i]);
+      //   console.log(first_name[i]);
+      //   console.log(last_name[i]);
+      //   console.log(gender[i]);
+      //   console.log(number[i]);
+      //   console.log(address[i]);
+      // }
+      $('.modal-container').css("display", "none");
+      $('.auth-form_profile-form').css("display", "none");
+      $('.auth-form').css("display", "block");
+      $('.btn-login_signup').css("display", "none");
+      $('.user-avt').css("display", "block");
+      $('.user_name').text(last_name[m-1]);
+    }
+  })
+
+  $('.btn-back_profile').click(function(){
+    $('.modal-container').css("display", "none");
+    $('.auth-form_profile-form').css("display", "none");
+    $('.auth-form').css("display", "block");
+    $('.btn-login_signup').css("display", "none");
+    $('.user-avt').css("display", "block");
+    $('.user_name').text(user_name[m-1]);
   })
 
 });

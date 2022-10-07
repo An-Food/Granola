@@ -103,15 +103,6 @@ body{
     font-weight: bold;
 }
 
-.login-signup_button button{
-    font-size: 20px;
-    border: 0px;
-    background-color: #cccccc;
-    margin: 0 30px;
-    padding: 5px 25px;
-    transform: translateY(-5px);
-}
-
 .login-signup_button button:hover{
     background-color: var(--primary-hover__color);
     color: var(--primary-background__color);
@@ -719,6 +710,57 @@ p.title {
     display: none;
 }
 
+/* thongtintaikhoan */
+.auth-form_profile-form{
+    width: 1000px;
+    background-color: white;
+    animation: fadeIn linear 0.1s;
+    font-weight: bold;
+    display: none;
+}
+
+.auth-form_profile-form .auth-form__group{
+    display: flex;   
+}
+
+.auth-form__group-gender{
+    font-size: 20px;
+}
+
+.input-sub_profile{
+    width: 20%;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.auth-form__header_profile{
+    justify-content: center;
+    display: flex;
+    margin: 0 36px;
+}
+
+.auth-form__input_profile{
+    width: 80%;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 18px;
+    border: 1px solid var(--primary-background__color);
+    border-radius: 2px;  
+    outline: none;  
+}
+
+.auth-form__input_profile:focus {
+    border: 2px solid #888;
+
+}
+
+.auth-form__controls_profile{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+/*  */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -767,11 +809,6 @@ p.title {
 
 .auth-form__group{
     margin-bottom: 15px;
-}
-
-.auth-form__group-gender{
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .input-sub{
@@ -871,7 +908,8 @@ p.title {
 
 .empty_field::-webkit-input-placeholder{
     font-size: 16px;
-    color: red;
+    color: gray;
+    font-style: italic;
 }
 
 .auth-form__help{
@@ -1059,4 +1097,53 @@ p.title {
 .btn-buy_now:hover {
     background-color: #ccc;
     color: black;
+}
+
+/* Header User */
+.user-avt{
+    padding-left: 30px;
+    padding-right: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+.user-avt:hover{
+    color: var(--primary-background__color);
+}
+
+.user-avt span{
+    padding-left: 10px;
+}
+
+.user_subnav:hover .subnav {
+    display: block;
+}
+
+.user_subnav .subnav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+.user_subnav .subnav {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    top: 100%;
+}
+
+.user_subnav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+.btn-login_signup{
+    font-size: 20px;
+    border: 0px;
+    background-color: #cccccc;
+    margin: 0 30px;
+    padding: 5px 25px;
+    transform: translateY(+2px);
+    display: block;
 }
