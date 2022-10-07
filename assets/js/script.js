@@ -24,8 +24,10 @@ function isValidUserName(username) {
   return regex.test(username);
 }
 
+
+
 var user;
-var m = 0;
+var m = 1;
 const user_name = [];
 const password = [];
 const email = [];
@@ -36,6 +38,17 @@ const number = [];
 const address = [];
 
 $(document).ready(function(){
+  // Tài khoản có sẵn
+  user_name[0] = "thuien1905";
+  password[0] = "88888888";
+  email[0] = "granolaAnfood@gmail.com";
+  first_name[0] = "Hà Thị Thanh";
+  last_name[0] = "Huyền";
+  gender[0] = 0;
+  number[0] = "012345678";
+  address[0] = "thành phố Hồ Chí Minh";
+  // 
+
     // Chuyen trang
     $('.product-list-main').hide();
     $('#product-page').on('click', function(){
@@ -326,15 +339,7 @@ $(document).ready(function(){
       gender[m-1] = $("input[name='auth-form__input-gender']:checked").val();
       number[m-1] = $('.auth-form__input-number').val(); 
       address[m-1] = $('.auth-form__input-address').val(); 
-      // for(var i = 0; i < m; i++){
-      //   console.log(user_name[i]);
-      //   console.log(email[i]);
-      //   console.log(first_name[i]);
-      //   console.log(last_name[i]);
-      //   console.log(gender[i]);
-      //   console.log(number[i]);
-      //   console.log(address[i]);
-      // }
+      
       $('.modal-container').css("display", "none");
       $('.auth-form_profile-form').css("display", "none");
       $('.auth-form').css("display", "block");
@@ -353,4 +358,55 @@ $(document).ready(function(){
     $('.user_name').text(user_name[m-1]);
   })
 
+  //login
+  $('.btn-login').click(function(){
+    var T = 0;       
+    if(!$('.auth-form__login-email').val()){
+        $('.auth-form__login-email').addClass("empty_field");
+        $('.auth-form__login-email').attr("placeholder", "Không được để trống!");
+        T = 1;            
+    }
+
+    if(!$('.auth-form__login-password').val()){
+        $('.auth-form__login-password').addClass("empty_field");
+        $('.auth-form__login-password').attr("placeholder", "Không được để trống!");     
+        T = 1;       
+    }
+
+    if(T == 0){            
+        for(let i = 0; i < m; i++){     
+            if($('.auth-form__login-email').val() == user_name[i] || $('.auth-form__login-email').val() == email[i]) {
+                if($('.auth-form__login-password').val() == password[i]){         
+                    $('.modal-container').css("display", "none");              
+                    $('.auth-form_profile-form').css("display", "none");
+                    $('.auth-form').css("display", "block");
+                    $('.btn-login_signup').css("display", "none");
+                    $('.user-avt').css("display", "block");
+                    console.log(last_name[m]);
+                    $('.user_name').text(last_name[i]);
+                    T = 1;
+                }
+                else{
+                  $('.auth-form__login-password').addClass("empty_field");
+                  $('.auth-form__login-password').val("");
+                  $('.auth-form__login-password').attr("placeholder", "Sai mật khẩu!"); 
+                  T = 1;
+                }
+            }                
+        }
+        
+        if(T == 0){
+            $('.auth-form__login-email').addClass("empty_field");
+            $('.auth-form__login-email').val("");
+            $('.auth-form__login-password').val("");
+            $('.auth-form__login-email').attr("placeholder", "Không tồn tại tên tài khoản này!");
+        }
+    }
+  })
+
+  //signout
+  $('.signout').click(function(){
+    $('.user-avt').css("display", "none");
+    $('.btn-login_signup').css("display", "block");
+})
 });
