@@ -25,7 +25,7 @@ function isValidUserName(username) {
 }
 
 
-
+var active_user;
 var user;
 var m = 1;
 const user_name = [];
@@ -44,7 +44,7 @@ $(document).ready(function(){
   email[0] = "granolaAnfood@gmail.com";
   first_name[0] = "Hà Thị Thanh";
   last_name[0] = "Huyền";
-  gender[0] = 0;
+  gender[0] = 1;
   number[0] = "012345678";
   address[0] = "thành phố Hồ Chí Minh";
   // 
@@ -172,13 +172,13 @@ $(document).ready(function(){
     // content
     $('#content_product_'+active_product).css('opacity',1);
     $('#content_product_'+active_product).css('left',0);
-    $('#content_product_'+(active_product-1 < 0 ? count_group_product - 1 : active_product - 1 )).css('left','-100%');
+    $('#content_product_'+(active_product-1 < 0 ? count_group_product - 1 : active_product - 1 )).css('left','+100%');
     $('#content_product_'+(active_product-1 < 0 ? count_group_product - 1 : active_product  -1 )).css('opacity','0');
-    $('#content_product_'+(active_product - 2 == -1 ? count_group_product - 1 :active_product - 2 == -2 ? count_group_product - 2 : active_product - 2)).css('left','100%');
+    $('#content_product_'+(active_product - 2 == -1 ? count_group_product - 1 :active_product - 2 == -2 ? count_group_product - 2 : active_product - 2)).css('left','0');
   }
   
   Load_product();
-  $('#next').on('click', function(){
+  $('.next').on('click', function(){
     active_product = active_product + 1 >= count_group_product ? 0 : active_product + 1;
     Load_product();
   })
@@ -332,13 +332,14 @@ $(document).ready(function(){
       F = 1;
     }
     if(F == 0){
-      user_name[m-1] = $('.auth-form__input-username').val();            
-      email[m-1] = $('.auth-form__input-email').val(); 
-      first_name[m-1] = $('.auth-form__input-first-name').val(); 
-      last_name[m-1] = $('.auth-form__input-last-name').val(); 
-      gender[m-1] = $("input[name='auth-form__input-gender']:checked").val();
-      number[m-1] = $('.auth-form__input-number').val(); 
-      address[m-1] = $('.auth-form__input-address').val(); 
+      active_user = m-1;
+      user_name[active_user] = $('.auth-form__input-username').val();            
+      email[active_user] = $('.auth-form__input-email').val(); 
+      first_name[active_user] = $('.auth-form__input-first-name').val(); 
+      last_name[active_user] = $('.auth-form__input-last-name').val(); 
+      gender[active_user] = $("input[name='auth-form__input-gender']:checked").val();
+      number[active_user] = $('.auth-form__input-number').val(); 
+      address[active_user] = $('.auth-form__input-address').val(); 
       
       $('.modal-container').css("display", "none");
       $('.auth-form_profile-form').css("display", "none");
@@ -355,7 +356,9 @@ $(document).ready(function(){
     $('.auth-form').css("display", "block");
     $('.btn-login_signup').css("display", "none");
     $('.user-avt').css("display", "block");
-    $('.user_name').text(user_name[m-1]);
+    if(last_name[active_user] != ""){
+      $('.user_name').text(user_name[active_user]);
+    }
   })
 
   //login
@@ -381,9 +384,9 @@ $(document).ready(function(){
                     $('.auth-form_profile-form').css("display", "none");
                     $('.auth-form').css("display", "block");
                     $('.btn-login_signup').css("display", "none");
-                    $('.user-avt').css("display", "block");
-                    console.log(last_name[m]);
+                    $('.user-avt').css("display", "block");                    
                     $('.user_name').text(last_name[i]);
+                    active_user = i;
                     T = 1;
                 }
                 else{
@@ -408,5 +411,22 @@ $(document).ready(function(){
   $('.signout').click(function(){
     $('.user-avt').css("display", "none");
     $('.btn-login_signup').css("display", "block");
-})
+  })
+
+  //xem thông tin
+  $('.inform').click(function(){
+    $('.auth-form_profile-form').css("display", "block");
+    $('.auth-form').css("display", "none");
+    $('.modal-container').css("display", "block");
+    $('.auth-form__input-username').val(user_name[active_user]);            
+    $('.auth-form__input-email').val(email[active_user]); 
+    $('.auth-form__input-first-name').val(first_name[active_user]); 
+    $('.auth-form__input-last-name').val(last_name[active_user]); 
+    
+    if(gender[active_user] == 1){
+      $("#auth-form__input-gender_female").prop("checked", true);
+    }
+    $('.auth-form__input-number').val(number[active_user]); 
+    $('.auth-form__input-address').val(address[active_user]); 
+  })
 });

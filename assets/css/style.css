@@ -236,27 +236,27 @@ body{
 }
 
 .content_0{
-    top: 15%;
-    right: 1%;
+    top: 18%;
+    right: 0%;
 }
 
 .content_1{
     top: 8%;
-    right: 2%;
+    right: 0%;
 }
 
 .content_2{
-    top: 40%;
-    right: 15%;
+    top: 50%;
+    right: 0%;
 }
 
 h2{
     font-family: 'Sora', sans-serif;
-    font-size: 40px;
+    font-size: 33px;
 }
 
 .content1{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
 }
 .button{
@@ -349,6 +349,19 @@ h2{
     top:15%;
     text-align: center;
 }
+
+.more_detail{
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.item_product h1{
+    font-size: 40px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .list .item_product{
     display: none;
 }
@@ -358,7 +371,8 @@ h2{
 .list .img_product{
     width: 90%;
     position: absolute;
-    top:30%;
+    top:40%;
+    height: 100%;
     left:50%; transform: translate(-50%,-50%);
 }
 .list .img_product img{
@@ -441,15 +455,16 @@ h2{
 }
 
 .list-button{
-    margin-top:50px;
-    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+    margin-top:5px;
 }
 .content_product{
     position: absolute;
     right:30px ;
    width:300px;
    height: 100%;
-   top: 30px;
+   top: 100px;
    overflow: hidden;
 }
 .content_product .item_product{
@@ -468,7 +483,7 @@ h2{
     background-color: #d5dee3;
 }
 
-.next{
+/* .next{
     position: absolute;
     top: 650px;
     right:60px;
@@ -484,7 +499,7 @@ h2{
 
 .next button:hover{
     background-color: #ccc;
-}
+} */
 
 .btn-hearted i{
     color: red;
@@ -494,9 +509,10 @@ h2{
     
 }
 
-.btn-product:last-child {
+.btn-product{
+    margin-left: 10px;
     margin-top: 10px;
-    width: 235px;
+    /* width: 235px; */
     font-weight: bold;
 }
 
