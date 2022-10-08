@@ -252,11 +252,11 @@ body{
 
 h2{
     font-family: 'Sora', sans-serif;
-    font-size: 33px;
+    font-size: 30px;
 }
 
 .content1{
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
 }
 .button{
@@ -1050,7 +1050,7 @@ p.title {
 }
 
 .product-item_2 {
-    background-image: url(../img/p_3.png);
+    background-image: url(../img/vani_500g.png);
 }
 .home-product-item__name {
     font-size: 18px;

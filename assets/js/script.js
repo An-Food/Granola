@@ -265,7 +265,7 @@ $(document).ready(function(){
         
         if(m >0){
             for(let i=0; i<m; i++){
-                if($('.auth-form__input-email').val() == user_name[i]){
+                if($('.auth-form__input-email').val() == user_name[i]){                    
                     $('.auth-form__input-email').addClass("empty_field");
                     $('.auth-form__input-email').val('');
                     $('.auth-form__input-email').attr("placeholder", "Tên tài khoản này đã được sử dụng!");
@@ -285,9 +285,11 @@ $(document).ready(function(){
             user_name[m] = $('.auth-form__input-username').val();
             password[m] = $('.auth-form__input-password').val(); 
             email[m] = $('.auth-form__input-email').val(); 
+            active_user = m;
             m++;
             $('.auth-form').css("display", "none");
             $('.auth-form_profile-form').css("display", "block");
+            $('.auth-form__input_profile').val("");
             $('.auth-form__input_profile').removeAttr('placeholder');
 
             // nhập thông tin
@@ -346,7 +348,7 @@ $(document).ready(function(){
       $('.auth-form').css("display", "block");
       $('.btn-login_signup').css("display", "none");
       $('.user-avt').css("display", "block");
-      $('.user_name').text(last_name[m-1]);
+      $('.user_name').text(last_name[active_user]);
     }
   })
 
@@ -356,8 +358,15 @@ $(document).ready(function(){
     $('.auth-form').css("display", "block");
     $('.btn-login_signup').css("display", "none");
     $('.user-avt').css("display", "block");
-    if(last_name[active_user] != ""){
+    console.log(active_user);
+    console.log(user_name[active_user]);
+    if(last_name[active_user] == ""){
+      $('.user_name').text(last_name[active_user]);
+      console.log("true");
+    }
+    else{
       $('.user_name').text(user_name[active_user]);
+      
     }
   })
 
@@ -380,13 +389,13 @@ $(document).ready(function(){
         for(let i = 0; i < m; i++){     
             if($('.auth-form__login-email').val() == user_name[i] || $('.auth-form__login-email').val() == email[i]) {
                 if($('.auth-form__login-password').val() == password[i]){         
+                    active_user = i;
                     $('.modal-container').css("display", "none");              
                     $('.auth-form_profile-form').css("display", "none");
                     $('.auth-form').css("display", "block");
                     $('.btn-login_signup').css("display", "none");
                     $('.user-avt').css("display", "block");                    
-                    $('.user_name').text(last_name[i]);
-                    active_user = i;
+                    $('.user_name').text(last_name[active_user]);                    
                     T = 1;
                 }
                 else{
@@ -411,6 +420,7 @@ $(document).ready(function(){
   $('.signout').click(function(){
     $('.user-avt').css("display", "none");
     $('.btn-login_signup').css("display", "block");
+    console.log(active_user);
   })
 
   //xem thông tin
