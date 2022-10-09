@@ -289,12 +289,13 @@ $(document).ready(function(){
             m++;
             $('.auth-form').css("display", "none");
             $('.auth-form_profile-form').css("display", "block");
+            $("#auth-form__input-gender_male").prop("checked", true);
             $('.auth-form__input_profile').val("");
             $('.auth-form__input_profile').removeAttr('placeholder');
 
             // nhập thông tin
-            $('.auth-form__input-username').val(user_name[m-1]);
-            $('.auth-form__input-email').val(email[m-1]); 
+            $('.auth-form__input-username').val(user_name[active_user]);
+            $('.auth-form__input-email').val(email[active_user]); 
         }
   })
 
@@ -334,7 +335,6 @@ $(document).ready(function(){
       F = 1;
     }
     if(F == 0){
-      active_user = m-1;
       user_name[active_user] = $('.auth-form__input-username').val();            
       email[active_user] = $('.auth-form__input-email').val(); 
       first_name[active_user] = $('.auth-form__input-first-name').val(); 
@@ -358,15 +358,11 @@ $(document).ready(function(){
     $('.auth-form').css("display", "block");
     $('.btn-login_signup').css("display", "none");
     $('.user-avt').css("display", "block");
-    console.log(active_user);
-    console.log(user_name[active_user]);
-    if(last_name[active_user] == ""){
+    if(last_name[active_user] != null){
       $('.user_name').text(last_name[active_user]);
-      console.log("true");
     }
     else{
-      $('.user_name').text(user_name[active_user]);
-      
+      $('.user_name').text(user_name[active_user]);      
     }
   })
 
@@ -394,8 +390,13 @@ $(document).ready(function(){
                     $('.auth-form_profile-form').css("display", "none");
                     $('.auth-form').css("display", "block");
                     $('.btn-login_signup').css("display", "none");
-                    $('.user-avt').css("display", "block");                    
-                    $('.user_name').text(last_name[active_user]);                    
+                    $('.user-avt').css("display", "block");                 
+                    if(last_name[active_user] != null){
+                      $('.user_name').text(last_name[active_user]);                      
+                    }
+                    else{
+                      $('.user_name').text(user_name[active_user]);      
+                    }                   
                     T = 1;
                 }
                 else{
@@ -420,7 +421,6 @@ $(document).ready(function(){
   $('.signout').click(function(){
     $('.user-avt').css("display", "none");
     $('.btn-login_signup').css("display", "block");
-    console.log(active_user);
   })
 
   //xem thông tin
@@ -435,6 +435,9 @@ $(document).ready(function(){
     
     if(gender[active_user] == 1){
       $("#auth-form__input-gender_female").prop("checked", true);
+    }
+    else{
+      $("#auth-form__input-gender_male").prop("checked", true);
     }
     $('.auth-form__input-number').val(number[active_user]); 
     $('.auth-form__input-address').val(address[active_user]); 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style_add-to--cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./assets/img/new_logo-removebg-preview.ico">
     <title>AN FOOD</title>
@@ -15,17 +16,20 @@
             <div class="nav-container">
                 <img src="./assets/img/new_logo.jpg" class="logo"/>
                 <ul id = "nav">
-                <li><a id= "home-page" class="focus">Trang chủ</a></li>
-                <li><a id= "product-page" >Sản phẩm</a></li>
-                <li><a>Giới thiệu</a></li>
-                <li><a>Chăm sóc khách hàng</a></li>
-            </ul>
+                    <li><a id= "home-page" class="focus">Trang chủ</a></li>
+                    <li><a id= "product-page" >Sản phẩm</a></li>
+                    <li><a>Giới thiệu</a></li>
+                    <li><a>Chăm sóc khách hàng</a></li>
+                </ul>
             </div>
 
             <div class="user-interface">
-                <div class="shopping-cart">
+                <!-- <div class="shopping-cart">
                     <i class="fa-solid fa-cart-shopping"></i>
-                </div>
+                    <span class="cart_contain_num"></span>
+                    <div class="cart_item_container">                        
+                    </div>
+                </div> -->
 
                 <div class = "login-signup_button">
                     <button class="btn-login_signup">Đăng nhập/ Đăng ký</button>
@@ -104,12 +108,16 @@
                         <div class="bg-rotate"></div>
                           <div class="wall"></div>
                               <div class="item_product item_product_active" id="item_product_0" data-bg="#C7DDE8" data-cl="#4A4C65">                                
-                                  <div class="img_product">                                    
-                                    <img src="./assets/img/vani_500g_seller.png">
+                                  <div class="img_product"> 
+                                    <img src="./assets/img/best-seller-removebg-preview.png" alt="">                                   
+                                    <img src="./assets/img/vani_500g.png">
                                 </div>               
                               </div>
                               <div class="item_product" id="item_product_1"  data-bg="#ADBA85" data-cl="rgb(85 98 45)">
-                                  <div class="img_product"><img src="./assets/img/vani_250g.png"></div>               
+                                  <div class="img_product">
+                                    <!-- <img src="./assets/img/best-seller-removebg-preview.png" alt="">  -->
+                                    <img src="./assets/img/vani_250g.png">
+                                </div>               
                               </div>
                             </div>
                           <div class="dot">
@@ -128,7 +136,7 @@
                                   </p>
                                   
                                   <p class="list-button">
-                                        <button class="btn-product btn-add_cart"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                        <button class="btn-product btn-add_cart js-cd-add-to-cart" data-price="25.99"><i class="fa-solid fa-cart-arrow-down"></i></button>
                                         <button class="btn-product next"><i class="fa-solid fa-angle-right"></i></button>                                        
                                   </p>
                               </div>
@@ -145,7 +153,7 @@
                                     </p>
     
                                     <p class="list-button">
-                                        <button class="btn-product btn-add_cart"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                        <button class="btn-product btn-add_cart js-cd-add-to-cart" data-price="25.99"><i class="fa-solid fa-cart-arrow-down js-cd-add-to-cart" data-price="25.99"></i></button>
                                         <button class="btn-product next"><i class="fa-solid fa-angle-right"></i></button>                                        
                                   </p>
                               </div>
@@ -502,8 +510,42 @@
     </div>
 </div>
         
+<!-- Thêm vào giỏ hàng -->
+<div class="cd-cart cd-cart--empty js-cd-cart">
+	<a href="#0" class="cd-cart__trigger text-replace">
+		Cart
+		<ul class="cd-cart__count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .cd-cart__count -->
+	</a>
 
+	<div class="cd-cart__content">
+		<div class="cd-cart__layout">
+			<header class="cd-cart__header">
+				<h2>Cart</h2>
+				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
+			
+			<div class="cd-cart__body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
 
+			<footer class="cd-cart__footer">
+				<a href="#0" class="cd-cart__checkout">
+          <em>Checkout - $<span>0</span>
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+            </svg>
+          </em>
+        </a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart__content -->
+</div> <!-- cd-cart -->
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/util.js"></script>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
