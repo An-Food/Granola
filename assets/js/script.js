@@ -91,6 +91,16 @@ $(document).ready(function(){
     }, 600);
     })
 
+    $('.btn-add_cart').on('click', function(){
+      $('#home-page').removeClass('focus');
+      $('#product-page').addClass('focus');
+      hideElement($('.home-main'));
+      showElement($('.product-list-main'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    })
+
     // Thả tim
     
     $('.btn-heart_0').click(function(){

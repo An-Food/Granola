@@ -136,7 +136,7 @@
                                   </p>
                                   
                                   <p class="list-button">
-                                        <button class="btn-product btn-add_cart js-cd-add-to-cart" data-price="25.99"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                                        <button class="btn-product btn-add_cart"><i class="fa-solid fa-cart-arrow-down"></i></button>
                                         <button class="btn-product next"><i class="fa-solid fa-angle-right"></i></button>                                        
                                   </p>
                               </div>
@@ -153,7 +153,7 @@
                                     </p>
     
                                     <p class="list-button">
-                                        <button class="btn-product btn-add_cart js-cd-add-to-cart" data-price="25.99"><i class="fa-solid fa-cart-arrow-down js-cd-add-to-cart" data-price="25.99"></i></button>
+                                        <button class="btn-product btn-add_cart"><i class="fa-solid fa-cart-arrow-down js-cd-add-to-cart" data-price="25.99"></i></button>
                                         <button class="btn-product next"><i class="fa-solid fa-angle-right"></i></button>                                        
                                   </p>
                               </div>
@@ -216,7 +216,7 @@
                             <div class="home-product-item ">
                                 <div class="home-product-item__img product-item_0"></div>
                                 <div class="product-detail">                                    
-                                    <h4 class="home-product-item__name">Hạt dinh dưỡng Granola vị matcha 500gr</h4>
+                                    <h4 class="home-product-item__name js_product_name_0">Hạt dinh dưỡng Granola vị matcha 500gr</h4>
                                     <div class="home-product-item__price">                        
                                     <span class="home-product-item__price-current">Giá bán: 169000đ</span>
                                     <span class="home-product-item__like like_0">
@@ -226,7 +226,7 @@
                                 </div>     
                                 <div class="home-product-item__origin">
                                     <button class="btn-buy_now">Mua ngay</button>
-                                    <button class="btn-add_to__carts">Thêm vào giỏ hàng</button>
+                                    <button class="btn-add_to__carts js-cd-add-to-cart js_product_button_0" data-price="169000">Thêm vào giỏ hàng</button>
                                 </div>                               
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                             <div class="home-product-item ">
                                 <div class="home-product-item__img product-item_1"></div>
                                 <div class="product-detail">
-                                    <h4 class="home-product-item__name">Hạt dinh dưỡng Granola vị chocolate 500gr</h4>
+                                    <h4 class="home-product-item__name js_product_name_1">Hạt dinh dưỡng Granola vị chocolate 500gr</h4>
                                 <div class="home-product-item__price">                        
                                     <span class="home-product-item__price-current">Giá bán: 169000đ</span>
                                     <span class="home-product-item__like like_1">
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="home-product-item__origin">
                                     <button class="btn-buy_now">Mua ngay</button>
-                                    <button class="btn-add_to__carts">Thêm vào giỏ hàng</button>
+                                    <button class="btn-add_to__carts js-cd-add-to-cart js_product_button_1" data-price="169000">Thêm vào giỏ hàng</button>
                                 </div>
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                             <div class="home-product-item ">
                                 <div class="home-product-item__img product-item_2"></div>
                                 <div class="product-detail">
-                                    <h4 class="home-product-item__name">Hạt dinh dưỡng Granola vị vani 500gr</h4>
+                                    <h4 class="home-product-item__name js_product_name_2">Hạt dinh dưỡng Granola vị vani 500gr</h4>
                                 <div class="home-product-item__price">                        
                                     <span class="home-product-item__price-current">Giá bán: 169000đ</span>
                                     <span class="home-product-item__like like_2">
@@ -264,7 +264,7 @@
                                 </div>          
                                 <div class="home-product-item__origin">
                                     <button class="btn-buy_now">Mua ngay</button>
-                                    <button class="btn-add_to__carts">Thêm vào giỏ hàng</button>
+                                    <button class="btn-add_to__carts js-cd-add-to-cart js_product_button_2" data-price="169000">Thêm vào giỏ hàng</button>
                                 </div>                                   
                             </div>
                         </div>
@@ -513,7 +513,7 @@
 <!-- Thêm vào giỏ hàng -->
 <div class="cd-cart cd-cart--empty js-cd-cart">
 	<a href="#0" class="cd-cart__trigger text-replace">
-		Cart
+		Giỏ hàng
 		<ul class="cd-cart__count"> <!-- cart items count -->
 			<li>0</li>
 			<li>0</li>
@@ -523,8 +523,8 @@
 	<div class="cd-cart__content">
 		<div class="cd-cart__layout">
 			<header class="cd-cart__header">
-				<h2>Cart</h2>
-				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+				<h2>Giỏ hàng</h2>
+				<span class="cd-cart__undo">Đã xóa 1 sản phẩm. <a href="#0">Thêm vào lại</a></span>
 			</header>
 			
 			<div class="cd-cart__body">
@@ -535,19 +535,22 @@
 
 			<footer class="cd-cart__footer">
 				<a href="#0" class="cd-cart__checkout">
-          <em>Checkout - $<span>0</span>
+          <em>Thanh toán - <span>0</span>
             <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
             </svg>
+            đ
           </em>
         </a>
 			</footer>
 		</div>
 	</div> <!-- .cd-cart__content -->
 </div> <!-- cd-cart -->
-<script src="./assets/js/main.js"></script>
-<script src="./assets/js/util.js"></script>
+
+
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/util.js"></script>
 <script src="./assets/js/script.js"></script>
 </html>
