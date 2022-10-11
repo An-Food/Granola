@@ -2,20 +2,21 @@
 	// 
 	var active_product;
 	var src_product;
+	arr = [];
 
 	$('.js_product_button_0').click(function(){
 		active_product = 0;
-		src_product = "assets/img/product_img_1.png";
+		src_product = "assets/img/product_img_1.png";		
 	})
 
 	$('.js_product_button_1').click(function(){
 		active_product = 1;
-		src_product = "assets/img/product_img_2.png";
+		src_product = "assets/img/product_img_2.png";		
 	})
 
 	$('.js_product_button_2').click(function(){
 		active_product = 2;
-		src_product = "assets/img/product_img_3.png";
+		src_product = "assets/img/product_img_3.png";		
 	})
 	
 	// 
@@ -58,7 +59,7 @@
 
 			// update product quantity inside cart
 			cart[0].addEventListener('change', function(event) {
-				if(event.target.tagName.toLowerCase() == 'select') quickUpdateCart();
+				if(event.target.tagName.toLowerCase() == 'input') quickUpdateCart();
 			});
 
 			//reinsert product deleted from the cart
@@ -118,11 +119,20 @@
 			// this is just a product placeholder
 			// you should insert an item with the selected product info
 			// replace productId, productName, price and url with your real product info
-			// you should also check if the product was already in the cart -> if it is, just update the quantity
-			var productName = $('.js_product_name_' + active_product).text();
-			productId = productId + 1;
-			var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><select class="reset" id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
+			// you should also check if the product was already in the cart -> if it is, just update the quantity			
+			// for(let i = 0; i < productId; i++){
+			// 	if(arr[i] == active_product){
+			// 		console.log("hahaha");
+									
+			// 	}
+			// 	else{}
+			// }			
+			arr[productId] = active_product;
+			var productName = $('.js_product_name_' + active_product).text();						
+			//var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><select class="reset" id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
+			var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><input type="number" class="reset cd-product-'+ productId + '" name="quantity" value="1" min="1"></span></div></div></div></li>';
 			cartList.insertAdjacentHTML('beforeend', productAdded);
+			productId = productId + 1;				
 		};
 
 		function removeProduct(product) {
@@ -130,7 +140,7 @@
 			removePreviousProduct(); // prduct previously deleted -> definitively remove it from the cart
 			
 			var topPosition = product.offsetTop,
-				productQuantity = Number(product.getElementsByTagName('select')[0].value),
+				productQuantity = Number(product.getElementsByTagName('input')[0].value),
 				productTotPrice = Number((product.getElementsByClassName('cd-cart__price')[0].innerText).replace(' đ', '')) * productQuantity;
 
 			product.style.top = topPosition+'px';
@@ -192,13 +202,13 @@
 			cartTotal.innerText = bool ? (Number(cartTotal.innerText) + Number(price)).toFixed(0) : (Number(cartTotal.innerText) - Number(price)).toFixed(0);
 		};
 
-		function quickUpdateCart() {
+		function quickUpdateCart() {						
 			var quantity = 0;
 			var price = 0;
 
 			for(var i = 0; i < cartListItems.length; i++) {
 				if( !Util.hasClass(cartListItems[i], 'cd-cart__product--deleted') ) {
-					var singleQuantity = Number(cartListItems[i].getElementsByTagName('select')[0].value);
+					var singleQuantity = Number(cartListItems[i].getElementsByTagName('input')[0].value);
 					quantity = quantity + singleQuantity;
 					price = price + singleQuantity*Number((cartListItems[i].getElementsByClassName('cd-cart__price')[0].innerText).replace(' đ', ''));
 				}

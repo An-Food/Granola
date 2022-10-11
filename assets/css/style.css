@@ -1090,6 +1090,7 @@ p.title {
 .product-item_2 {
     background-image: url(../img/vani_500g.png);
 }
+
 .home-product-item__name {
     font-size: 18px;
     font-weight: 400px;
@@ -1151,6 +1152,10 @@ p.title {
 .btn-buy_now:hover {
     background-color: #ccc;
     color: black;
+}
+
+.btn-add_to__carts:disabled{
+    cursor: default;
 }
 
 /* Header User */
