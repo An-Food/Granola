@@ -388,6 +388,11 @@ h2{
     animation: img_show_best_seller 1.5s ease-out 1.5s 1 forwards;
 }
 
+.best_seller{
+    top: 10%;
+    left: 55%;
+}
+
 .list .img_product img{
     width: 80%;
     transform: rotate(-25deg);

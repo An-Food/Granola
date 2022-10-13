@@ -2,6 +2,9 @@
 	// 
 	var active_product;
 	var src_product;
+	var productId;
+	var productId_temp;
+	var active_product_temp;
 	arr = [];
 
 	$('.js_product_button_0').click(function(){
@@ -16,9 +19,9 @@
 
 	$('.js_product_button_2').click(function(){
 		active_product = 2;
-		src_product = "assets/img/product_img_3.png";		
-	})
-	
+		src_product = "assets/img/product_img_3.png";			
+	})	
+
 	// 
   var cart = document.getElementsByClassName('js-cd-cart');
   if(cart.length > 0) {
@@ -51,10 +54,16 @@
 			cart[0].addEventListener('click', function(event) {
 				if(event.target == cart[0]) { // close cart when clicking on bg layer
 					toggleCart(true);
-				} else if (event.target.closest('.cd-cart__delete-item')) { // remove product from cart
+				} else if (event.target.closest('.cd-cart__delete-item')) { // remove product from cart															
 					event.preventDefault();
 					removeProduct(event.target.closest('.cd-cart__product'));
 				}
+
+				$('.cd-cart__delete-item').click(function(){
+					productId_temp = $(this).attr("product_id");
+					active_product_temp = arr[productId_temp];
+					arr[productId_temp] = -1;		
+				})	
 			});
 
 			// update product quantity inside cart
@@ -120,22 +129,30 @@
 			// you should insert an item with the selected product info
 			// replace productId, productName, price and url with your real product info
 			// you should also check if the product was already in the cart -> if it is, just update the quantity			
-			// for(let i = 0; i < productId; i++){
-			// 	if(arr[i] == active_product){
-			// 		console.log("hahaha");
-									
-			// 	}
-			// 	else{}
-			// }			
-			arr[productId] = active_product;
-			var productName = $('.js_product_name_' + active_product).text();						
-			//var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><select class="reset" id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
-			var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><input type="number" class="reset cd-product-'+ productId + '" name="quantity" value="1" min="1"></span></div></div></div></li>';
-			cartList.insertAdjacentHTML('beforeend', productAdded);
-			productId = productId + 1;				
+			var Flag = 0;			
+			if(productId != 0){				
+				for(var i = 0 ; i < productId; i++)
+				{
+					if(arr[i] == active_product) {
+						Flag = 1;
+						var newQty = parseInt($("#cd-product-" + i).val()) + 1;
+						$("#cd-product-" + i).val(newQty);		
+					}
+					
+				}				
+			}
+			if(Flag == 0)
+			{
+				arr[productId] = active_product;
+				var productName = $('.js_product_name_' + active_product).text();						
+				var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a class="cd-cart__delete-item" product_id= '+ productId + '>Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><input type="number" class="reset" id="cd-product-'+ productId + '" name="quantity" value="1" min="1"></span></div></div></div></li>';			
+				cartList.insertAdjacentHTML('beforeend', productAdded);
+				productId = productId + 1;	
+			}
 		};
 
-		function removeProduct(product) {
+		function removeProduct(product) {		
+								
 			if(cartTimeoutId) clearInterval(cartTimeoutId);
 			removePreviousProduct(); // prduct previously deleted -> definitively remove it from the cart
 			

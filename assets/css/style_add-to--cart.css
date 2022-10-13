@@ -494,6 +494,10 @@ mark{background-color:hsla(355, 90%, 61%, 0.2);background-color:hsla(var(--color
     font-size:calc(var(--text-xs)*1.1);
 }
 
+.cd-cart__delete-item{
+    cursor: pointer;
+}
+
 .cd-cart__delete-item,.cd-cart__quantity{
     color:hsl(210, 31%, 28.8%);
     color:hsl(var(--cd-color-1-h), var(--cd-color-1-s), calc(var(--cd-color-1-l)*1.2));
