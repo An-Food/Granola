@@ -52,13 +52,32 @@ $(document).ready(function(){
     // Chuyen trang
     $('#about_us').hide();
     $('.product-list-main').hide();
+    $('.contact_us').hide();
+
+    $('#contact-page').on('click', function(){
+      $('#contact-page').addClass('focus');
+      $('#about-page').removeClass('focus');
+      $('#home-page').removeClass('focus');
+      $('#product-page').removeClass('focus');
+      hideElement($('.home-main'));
+      hideElement($('.product-list-main'));
+      hideElement($('#about_us'));
+      hideElement($('.footer'));
+      showElement($('.contact_us'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    })
 
     $('#about-page').on('click', function(){
       $('#about-page').addClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').removeClass('focus');
+      $('#contact-page').removeClass('focus');
       hideElement($('.home-main'));
       hideElement($('.product-list-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('#about_us'));
       $("html, body").animate({
         scrollTop: 0
@@ -69,8 +88,11 @@ $(document).ready(function(){
       $('#about-page').removeClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
+      $('#contact-page').removeClass('focus');
       hideElement($('#about_us'));
       hideElement($('.home-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('.product-list-main'));
       $("html, body").animate({
         scrollTop: 0
@@ -81,8 +103,11 @@ $(document).ready(function(){
       $('#about-page').removeClass('focus');
       $('#product-page').removeClass('focus');
       $('#home-page').addClass('focus');
+      $('#contact-page').removeClass('focus');
       hideElement($('#about_us'));
       hideElement($('.product-list-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('.home-main'));
       $("html, body").animate({
         scrollTop: 0
@@ -90,9 +115,14 @@ $(document).ready(function(){
     })
 
     $('.btn-sale').on('click', function(){
+      $('#about-page').removeClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
+      $('#contact-page').removeClass('focus');
+      hideElement($('#about_us'));
       hideElement($('.home-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('.product-list-main'));
       $("html, body").animate({
         scrollTop: 0
@@ -100,9 +130,14 @@ $(document).ready(function(){
     })
 
     $('.banner_img').on('click', function(){
+      $('#about-page').removeClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
+      $('#contact-page').removeClass('focus');
+      hideElement($('#about_us'));
       hideElement($('.home-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('.product-list-main'));
       $("html, body").animate({
         scrollTop: 0
@@ -110,9 +145,14 @@ $(document).ready(function(){
     })
 
     $('.btn-add_cart').on('click', function(){
+      $('#about-page').removeClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
+      $('#contact-page').removeClass('focus');
+      hideElement($('#about_us'));
       hideElement($('.home-main'));
+      hideElement($('.contact_us'));
+      showElement($('.footer'));
       showElement($('.product-list-main'));
       $("html, body").animate({
         scrollTop: 0

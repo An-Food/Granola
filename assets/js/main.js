@@ -4,37 +4,44 @@
 	var src_product;
 	var productId;
 	var productId_temp;
+	var product_price;
 	var active_product_temp;
 	arr = [];
 
 	$('.js_product_button_0').click(function(){
 		active_product = 0;
-		src_product = "assets/img/product_img_1.png";		
+		src_product = "assets/img/product_img_1.png";	
+		product_price = '169000 đ';
 	})
 
 	$('.js_product_button_1').click(function(){
 		active_product = 1;
-		src_product = "assets/img/product_img_2.png";		
+		src_product = "assets/img/product_img_2.png";	
+		product_price = '169000 đ';	
 	})
 
 	$('.js_product_button_2').click(function(){
 		active_product = 2;
-		src_product = "assets/img/product_img_3.png";			
+		src_product = "assets/img/product_img_3.png";
+		product_price = '169000 đ';			
 	})	
 
 	$('.js_product_button_3').click(function(){
 		active_product = 3;
-		src_product = "assets/img/p_3-removebg-preview.png";			
+		src_product = "assets/img/p_3-removebg-preview.png";
+		product_price = '89000 đ';			
 	})
 
 	$('.js_product_button_4').click(function(){
 		active_product = 4;
-		src_product = "assets/img/p_4-removebg-preview.png";			
+		src_product = "assets/img/p_4-removebg-preview.png";	
+		product_price = '89000 đ';		
 	})
 
 	$('.js_product_button_5').click(function(){
 		active_product = 5;
-		src_product = "assets/img/p_5-removebg-preview.png";			
+		src_product = "assets/img/p_5-removebg-preview.png";	
+		product_price = '89000 đ';		
 	})
 
 	// 
@@ -160,7 +167,7 @@
 			{
 				arr[productId] = active_product;
 				var productName = $('.js_product_name_' + active_product).text();						
-				var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">169000 đ</span><div class="cd-cart__actions"><a class="cd-cart__delete-item" product_id= '+ productId + '>Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><input type="number" class="reset" id="cd-product-'+ productId + '" name="quantity" value="1" min="1"></span></div></div></div></li>';			
+				var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="' + `${src_product}` + '" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">' + `${productName}` + '</a></h3><span class="cd-cart__price">' + product_price + '</span><div class="cd-cart__actions"><a class="cd-cart__delete-item" product_id= '+ productId + '>Xóa</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Số lượng</label><span class="cd-cart__select"><input type="number" class="reset" id="cd-product-'+ productId + '" name="quantity" value="1" min="1"></span></div></div></div></li>';			
 				cartList.insertAdjacentHTML('beforeend', productAdded);
 				productId = productId + 1;	
 			}
