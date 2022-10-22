@@ -22,6 +22,21 @@
 		src_product = "assets/img/product_img_3.png";			
 	})	
 
+	$('.js_product_button_3').click(function(){
+		active_product = 3;
+		src_product = "assets/img/p_3-removebg-preview.png";			
+	})
+
+	$('.js_product_button_4').click(function(){
+		active_product = 4;
+		src_product = "assets/img/p_4-removebg-preview.png";			
+	})
+
+	$('.js_product_button_5').click(function(){
+		active_product = 5;
+		src_product = "assets/img/p_5-removebg-preview.png";			
+	})
+
 	// 
   var cart = document.getElementsByClassName('js-cd-cart');
   if(cart.length > 0) {

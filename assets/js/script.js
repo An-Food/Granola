@@ -50,10 +50,26 @@ $(document).ready(function(){
   // 
 
     // Chuyen trang
+    $('#about_us').hide();
     $('.product-list-main').hide();
+
+    $('#about-page').on('click', function(){
+      $('#about-page').addClass('focus');
+      $('#home-page').removeClass('focus');
+      $('#product-page').removeClass('focus');
+      hideElement($('.home-main'));
+      hideElement($('.product-list-main'));
+      showElement($('#about_us'));
+      $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    })
+
     $('#product-page').on('click', function(){
+      $('#about-page').removeClass('focus');
       $('#home-page').removeClass('focus');
       $('#product-page').addClass('focus');
+      hideElement($('#about_us'));
       hideElement($('.home-main'));
       showElement($('.product-list-main'));
       $("html, body").animate({
@@ -62,8 +78,10 @@ $(document).ready(function(){
     })
 
     $('#home-page').on('click', function(){
+      $('#about-page').removeClass('focus');
       $('#product-page').removeClass('focus');
       $('#home-page').addClass('focus');
+      hideElement($('#about_us'));
       hideElement($('.product-list-main'));
       showElement($('.home-main'));
       $("html, body").animate({
