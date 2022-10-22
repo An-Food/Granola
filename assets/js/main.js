@@ -11,37 +11,37 @@
 	$('.js_product_button_0').click(function(){
 		active_product = 0;
 		src_product = "assets/img/product_img_1.png";	
-		product_price = '169000 đ';
+		product_price = '200000 đ';
 	})
 
 	$('.js_product_button_1').click(function(){
 		active_product = 1;
 		src_product = "assets/img/product_img_2.png";	
-		product_price = '169000 đ';	
+		product_price = '200000 đ';	
 	})
 
 	$('.js_product_button_2').click(function(){
 		active_product = 2;
 		src_product = "assets/img/product_img_3.png";
-		product_price = '169000 đ';			
+		product_price = '200000 đ';			
 	})	
 
 	$('.js_product_button_3').click(function(){
 		active_product = 3;
 		src_product = "assets/img/p_3-removebg-preview.png";
-		product_price = '89000 đ';			
+		product_price = '130000 đ';			
 	})
 
 	$('.js_product_button_4').click(function(){
 		active_product = 4;
 		src_product = "assets/img/p_4-removebg-preview.png";	
-		product_price = '89000 đ';		
+		product_price = '130000 đ';		
 	})
 
 	$('.js_product_button_5').click(function(){
 		active_product = 5;
 		src_product = "assets/img/p_5-removebg-preview.png";	
-		product_price = '89000 đ';		
+		product_price = '130000 đ';		
 	})
 
 	// 
